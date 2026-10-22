@@ -1,74 +1,553 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Talentz - El portal del talento deportivo en LATAM</title>
+  <title>Talentz - El Portal del Talento Deportivo en LATAM</title>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 500: '#10b981', 600: '#059669', 400: '#34d399' },
+            accent: { 500: '#06b6d4', 600: '#0891b2' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glow-emerald {
+      box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.3);
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-brand-500 selection:text-slate-950">
 
-  <!-- Header / Navbar -->
-  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center gap-2">
-        <span class="text-3xl font-extrabold tracking-wider bg-gradient-to-r from-emerald-400 to-cyan-500 bg-clip-text text-transparent">
-          TALENTZ
-        </span>
+  <!-- NAVBAR -->
+  <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+      <!-- Logo -->
+      <div onclick="showView('hero')" class="cursor-pointer flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-accent-500 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          T
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
+            TALENTZ
+          </span>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400 -mt-1">LATAM SPORTS</span>
+        </div>
       </div>
-      <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-        BETA LATAM (+18)
-      </span>
+
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <button onclick="showView('hero')" class="text-slate-300 hover:text-brand-400 transition">Inicio</button>
+        <button onclick="showView('visor')" class="text-slate-300 hover:text-brand-400 transition flex items-center gap-1.5">
+          <i data-lucide="search" class="w-4 h-4 text-accent-500"></i> Buscar Atletas
+        </button>
+        <button onclick="showView('registro')" class="bg-brand-500 hover:bg-brand-400 text-slate-950 px-5 py-2.5 rounded-xl font-bold transition shadow-lg shadow-brand-500/20 hover:scale-105 active:scale-95 flex items-center gap-2">
+          <i data-lucide="user-plus" class="w-4 h-4"></i> Crear Perfil (+18)
+        </button>
+      </nav>
+
+      <!-- Mobile Button -->
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-400 hover:text-white">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-900/95 px-4 py-4 space-y-3">
+      <button onclick="showView('hero'); toggleMobileMenu();" class="block w-full text-left py-2 font-medium text-slate-300">Inicio</button>
+      <button onclick="showView('visor'); toggleMobileMenu();" class="block w-full text-left py-2 font-medium text-slate-300">Explorar Atletas</button>
+      <button onclick="showView('registro'); toggleMobileMenu();" class="w-full bg-brand-500 text-slate-950 py-3 rounded-xl font-bold text-center">Crear Perfil Atleta</button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <main class="flex-1 max-w-5xl mx-auto px-6 py-16 text-center flex flex-col items-center justify-center">
-    <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6 leading-tight">
-      Tu vitrina al <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">deporte profesional</span>
-    </h1>
-    <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mb-12">
-      Conectamos atletas de Latinoamérica mayores de edad con visores, cazatalentos y reclutadores de clubes y universidades.
-    </p>
+  <!-- VISTA 1: HERO / LANDING -->
+  <section id="view-hero" class="flex-1 flex flex-col justify-center relative overflow-hidden py-12 lg:py-20">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_50%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.15),transparent_50%)]"></div>
 
-    <!-- Tarjetas de Selección Directa -->
-    <div class="grid md:grid-cols-2 gap-8 w-full max-w-3xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
-      <!-- Opción Atleta -->
-      <div class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition duration-300 rounded-2xl p-8 flex flex-col items-center text-center shadow-xl">
-        <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        </div>
-        <h2 class="text-2xl font-bold mb-3">Soy Atleta (+18)</h2>
-        <p class="text-slate-400 text-sm mb-8 leading-relaxed">
-          Crea tu perfil deportivo, muestra tus métricas clave y adjunta tus videos de pruebas (trials) e jugadas destacadas.
-        </p>
-        <button onclick="alert('Módulo de registro de atletas en construcción')" class="mt-auto w-full py-3.5 px-6 rounded-xl font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition">
-          Registrar mi perfil
-        </button>
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-brand-500/30 mb-8 text-xs font-bold tracking-wide text-brand-400">
+        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+        PLATAFORMA LÍDER DE VISORÍAS DIGITALES EN LATAM
       </div>
 
-      <!-- Opción Visor / Coach -->
-      <div class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition duration-300 rounded-2xl p-8 flex flex-col items-center text-center shadow-xl">
-        <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
+        El puente entre tu talento deportivo y las <span class="bg-gradient-to-r from-brand-400 via-teal-300 to-accent-500 bg-clip-text text-transparent">grandes oportunidades</span>.
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-12 font-normal leading-relaxed">
+        Sube tus métricas clave, historial competitivo y videos de pruebas (*trials*). Conéctate directamente con cazatalentos, clubes profesionales y becas universitarias.
+      </p>
+
+      <!-- Action Cards -->
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16 text-left">
+        
+        <!-- Tarjeta Atleta -->
+        <div onclick="showView('registro')" class="glass-card hover:border-brand-500/50 transition-all duration-300 p-8 rounded-3xl cursor-pointer group hover:-translate-y-1 glow-emerald">
+          <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 text-brand-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="trophy" class="w-7 h-7"></i>
+          </div>
+          <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">Para Deportistas +18</span>
+          <h2 class="text-2xl font-black text-white mt-1 mb-3">Soy Atleta</h2>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Muestra tu potencial. Publica tus estadísticas físicas, posición en cancha y tus mejores jugadas en video.
+          </p>
+          <div class="flex items-center gap-2 font-bold text-brand-400 text-sm group-hover:translate-x-2 transition-transform">
+            Registrar mi perfil <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
         </div>
-        <h2 class="text-2xl font-bold mb-3">Soy Visor / Coach</h2>
-        <p class="text-slate-400 text-sm mb-8 leading-relaxed">
-          Explora atletas calificados por deporte, posición, edad y ubicación. Contacta directamente con nuevos prospectos.
-        </p>
-        <button onclick="alert('Módulo de búsqueda de visores en construcción')" class="mt-auto w-full py-3.5 px-6 rounded-xl font-bold bg-slate-800 hover:bg-slate-700 text-cyan-400 border border-cyan-500/30 transition">
-          Explorar prospectos
-        </button>
+
+        <!-- Tarjeta Visor -->
+        <div onclick="showView('visor')" class="glass-card hover:border-accent-500/50 transition-all duration-300 p-8 rounded-3xl cursor-pointer group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 text-accent-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="user-check" class="w-7 h-7"></i>
+          </div>
+          <span class="text-xs font-bold text-accent-400 uppercase tracking-wider">Para Cazatalentos & Coaches</span>
+          <h2 class="text-2xl font-black text-white mt-1 mb-3">Soy Visor / Coach</h2>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Encuentra a los mejores prospectos filtrados por disciplina, categoría, rango físico y país de origen.
+          </p>
+          <div class="flex items-center gap-2 font-bold text-accent-400 text-sm group-hover:translate-x-2 transition-transform">
+            Explorar catálogo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80">
+        <div>
+          <p class="text-3xl font-black text-white" id="stat-athletes">1,240+</p>
+          <p class="text-xs text-slate-400 uppercase font-semibold mt-1">Atletas Registrados</p>
+        </div>
+        <div>
+          <p class="text-3xl font-black text-white">85+</p>
+          <p class="text-xs text-slate-400 uppercase font-semibold mt-1">Visores Activos</p>
+        </div>
+        <div>
+          <p class="text-3xl font-black text-white">12</p>
+          <p class="text-xs text-slate-400 uppercase font-semibold mt-1">Países LATAM</p>
+        </div>
+        <div>
+          <p class="text-3xl font-black text-white">100%</p>
+          <p class="text-xs text-slate-400 uppercase font-semibold mt-1">Acceso Mayor de Edad</p>
+        </div>
       </div>
 
     </div>
-  </main>
+  </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-600">
-    © 2026 Talentz. Plataforma exclusiva para mayores de 18 años.
+  <!-- VISTA 2: FORMULARIO REGISTRO ATLETA -->
+  <section id="view-registro" class="hidden flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
+    <div class="glass-card p-8 sm:p-10 rounded-3xl border border-slate-800">
+      
+      <div class="mb-8 border-b border-slate-800 pb-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-400">Paso 1 de 1</span>
+        <h2 class="text-3xl font-black text-white mt-1">Registro de Perfil de Atleta (+18)</h2>
+        <p class="text-slate-400 text-sm mt-1">Ingresa tus datos reales para que los cazatalentos puedan analizar tu perfil.</p>
+      </div>
+
+      <form id="form-atleta" onsubmit="saveAthleteProfile(event)" class="space-y-6">
+        
+        <!-- Nombre y Apellidos -->
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nombre Completo *</label>
+            <input type="text" id="athlete-name" required placeholder="Ej. Carlos Mendoza" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Edad (Mínimo 18 años) *</label>
+            <input type="number" id="athlete-age" min="18" max="45" required placeholder="19" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+          </div>
+        </div>
+
+        <!-- Deporte, Posición y País -->
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Deporte *</label>
+            <select id="athlete-sport" required class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+              <option value="">Selecciona...</option>
+              <option value="Fútbol">Fútbol</option>
+              <option value="Básquetbol">Básquetbol</option>
+              <option value="Voleibol">Voleibol</option>
+              <option value="Béisbol">Béisbol</option>
+              <option value="Atletismo">Atletismo</option>
+              <option value="Otro">Otro Deporte</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Posición Principal *</label>
+            <input type="text" id="athlete-position" required placeholder="Ej. Delantero Centro / Base" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">País / Ciudad *</label>
+            <input type="text" id="athlete-location" required placeholder="Ej. Guadalajara, México" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+          </div>
+        </div>
+
+        <!-- Métricas Físicas -->
+        <div class="grid sm:grid-cols-3 gap-6 bg-slate-900/50 p-4 rounded-2xl border border-slate-800">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Estatura (cm)</label>
+            <input type="number" id="athlete-height" placeholder="182" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-3 py-2 text-white text-sm outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Peso (kg)</label>
+            <input type="number" id="athlete-weight" placeholder="75" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-3 py-2 text-white text-sm outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Perfil / Perfil Hábil</label>
+            <select id="athlete-foot" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-3 py-2 text-white text-sm outline-none">
+              <option value="Diestro">Diestro / Derecho</option>
+              <option value="Zurdo">Zurdo / Izquierdo</option>
+              <option value="Ambidiestro">Ambidiestro</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Video Highlight Link -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Enlace de Video de Pruebas (YouTube / TikTok / Vimeo) *</label>
+          <input type="url" id="athlete-video" required placeholder="https://www.youtube.com/watch?v=..." class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+          <span class="text-[11px] text-slate-500 mt-1 block">Pega el link de tus jugadas destacadas o pruebas físicas.</span>
+        </div>
+
+        <!-- Bio / Vagaje -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Trayectoria y Logros Principales</label>
+          <textarea id="athlete-bio" rows="3" placeholder="Menciona tus equipos anteriores, ligas disputadas, campeonatos o marcas personales..." class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition"></textarea>
+        </div>
+
+        <!-- Verificación de Mayoría de Edad -->
+        <div class="flex items-start gap-3 bg-brand-500/10 p-4 rounded-xl border border-brand-500/20">
+          <input type="checkbox" id="age-check" required class="mt-1 accent-brand-500 w-4 h-4">
+          <label for="age-check" class="text-xs text-slate-300 leading-snug">
+            Confirmo bajo protesta de decir verdad que soy mayor de 18 años y autorizo a Talentz a mostrar mi perfil deportivo a reclutadores y visores.
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full bg-brand-500 hover:bg-brand-400 text-slate-950 py-4 rounded-xl font-black text-base transition shadow-xl shadow-brand-500/20">
+          Publicar Perfil Deportivo
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- VISTA 3: BUSCADOR DE VISORES / DIRECTORIO -->
+  <section id="view-visor" class="hidden flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    
+    <!-- Title & Search Bar -->
+    <div class="mb-10 text-center max-w-3xl mx-auto">
+      <span class="text-xs font-bold uppercase tracking-widest text-accent-400">Directorio de Prospectos</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-white mt-1 mb-4">Descubre Talento Deportivo LATAM</h2>
+      
+      <!-- Input de Búsqueda -->
+      <div class="relative mt-6">
+        <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+        <input type="text" id="search-input" onkeyup="filterAthletes()" placeholder="Buscar por nombre, posición o ciudad..." class="w-full bg-slate-900/90 border border-slate-700 focus:border-accent-500 rounded-2xl pl-12 pr-4 py-4 text-white text-sm outline-none transition shadow-2xl">
+      </div>
+
+      <!-- Filtros Rápidos por Deporte -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mt-4" id="sport-filters">
+        <button onclick="setSportFilter('Todos')" class="filter-btn active bg-accent-500 text-slate-950 px-4 py-1.5 rounded-full text-xs font-bold transition">Todos</button>
+        <button onclick="setSportFilter('Fútbol')" class="filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Fútbol</button>
+        <button onclick="setSportFilter('Básquetbol')" class="filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Básquetbol</button>
+        <button onclick="setSportFilter('Voleibol')" class="filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Voleibol</button>
+        <button onclick="setSportFilter('Béisbol')" class="filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Béisbol</button>
+      </div>
+    </div>
+
+    <!-- Grid de Atletas -->
+    <div id="athletes-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Se llena dinámicamente con JS -->
+    </div>
+
+  </section>
+
+  <!-- MODAL VER VIDEO / DETALLES -->
+  <div id="modal-athlete" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glass-card max-w-2xl w-full rounded-3xl border border-slate-800 overflow-hidden relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeModal()" class="absolute top-4 right-4 p-2 rounded-full bg-slate-900 text-slate-400 hover:text-white z-10">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="p-8" id="modal-content">
+        <!-- Contenido dinámico -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>© 2026 TALENTZ SPORTS. Todos los derechos reservados. Exclusivo mayores de 18 años.</p>
+      <div class="flex gap-4 font-medium text-slate-400">
+        <a href="#" class="hover:text-brand-400">Términos</a>
+        <a href="#" class="hover:text-brand-400">Privacidad</a>
+        <a href="#" class="hover:text-brand-400">Soporte Visores</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- LOGIC / JAVASCRIPT -->
+  <script>
+    // Atletas de prueba para iniciar
+    const MOCK_ATHLETES = [
+      {
+        id: 1,
+        name: "Mateo Silva",
+        age: 20,
+        sport: "Fútbol",
+        position: "Extremo Izquierdo",
+        location: "CDMX, México",
+        height: 178,
+        weight: 71,
+        foot: "Zurdo",
+        video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        bio: "Sub-20 Selección Regional. Velocidad explosiva y regate en mano a mano.",
+        verified: true
+      },
+      {
+        id: 2,
+        name: "Camila Torres",
+        age: 21,
+        sport: "Básquetbol",
+        position: "Base / Point Guard",
+        location: "Medellín, Colombia",
+        height: 175,
+        weight: 65,
+        foot: "Diestro",
+        video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        bio: "Líder en asistencias Liga Universitaria 2025. Tiro de 3 puntos efectivo.",
+        verified: true
+      },
+      {
+        id: 3,
+        name: "Diego Hernández",
+        age: 19,
+        sport: "Béisbol",
+        position: "Lanzador / Pitcher",
+        location: "Monterrey, México",
+        height: 188,
+        weight: 84,
+        foot: "Diestro",
+        video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        bio: "Recta alcanzando las 91 MPH. Cambio de velocidad y slider agresivo.",
+        verified: true
+      }
+    ];
+
+    let athletes = [];
+    let currentSportFilter = 'Todos';
+
+    // Cargar atletas al iniciar
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      const stored = localStorage.getItem('talentz_athletes');
+      athletes = stored ? JSON.parse(stored) : MOCK_ATHLETES;
+      renderDirectory();
+    });
+
+    // Cambiar entre Vistas
+    function showView(viewName) {
+      document.getElementById('view-hero').classList.add('hidden');
+      document.getElementById('view-registro').classList.add('hidden');
+      document.getElementById('view-visor').classList.add('hidden');
+
+      document.getElementById(`view-${viewName}`).classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if(viewName === 'visor') {
+        renderDirectory();
+      }
+    }
+
+    // Toggle Menú Móvil
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Guardar nuevo Atleta desde Formulario
+    function saveAthleteProfile(e) {
+      e.preventDefault();
+
+      const newAthlete = {
+        id: Date.now(),
+        name: document.getElementById('athlete-name').value,
+        age: parseInt(document.getElementById('athlete-age').value),
+        sport: document.getElementById('athlete-sport').value,
+        position: document.getElementById('athlete-position').value,
+        location: document.getElementById('athlete-location').value,
+        height: document.getElementById('athlete-height').value || 'N/A',
+        weight: document.getElementById('athlete-weight').value || 'N/A',
+        foot: document.getElementById('athlete-foot').value,
+        video: document.getElementById('athlete-video').value,
+        bio: document.getElementById('athlete-bio').value || 'Sin descripción ingresada.',
+        verified: false
+      };
+
+      athletes.unshift(newAthlete);
+      localStorage.setItem('talentz_athletes', JSON.stringify(athletes));
+
+      alert('¡Tu perfil deportivo ha sido creado exitosamente!');
+      document.getElementById('form-atleta').reset();
+      showView('visor');
+    }
+
+    // Renderizar tarjetas de atletas
+    function renderDirectory() {
+      const grid = document.getElementById('athletes-grid');
+      const search = document.getElementById('search-input')?.value.toLowerCase() || '';
+
+      const filtered = athletes.filter(a => {
+        const matchesSport = currentSportFilter === 'Todos' || a.sport === currentSportFilter;
+        const matchesSearch = a.name.toLowerCase().includes(search) || 
+                              a.position.toLowerCase().includes(search) || 
+                              a.location.toLowerCase().includes(search);
+        return matchesSport && matchesSearch;
+      });
+
+      if(filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center text-slate-500">
+            <i data-lucide="user-x" class="w-12 h-12 mx-auto mb-3 text-slate-600"></i>
+            <p class="text-lg font-bold">No se encontraron prospectos con estos filtros.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      grid.innerHTML = filtered.map(a => `
+        <div class="glass-card p-6 rounded-3xl border border-slate-800 hover:border-brand-500/40 transition flex flex-col justify-between group">
+          <div>
+            <!-- Header Tarjeta -->
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-slate-800 text-brand-400 font-bold flex items-center justify-center text-lg border border-slate-700">
+                ${a.name.charAt(0)}
+              </div>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-900 text-brand-400 border border-brand-500/20">
+                ${a.sport}
+              </span>
+            </div>
+
+            <h3 class="text-xl font-black text-white group-hover:text-brand-400 transition">${a.name}</h3>
+            <p class="text-xs text-slate-400 font-medium">${a.position} • ${a.age} años</p>
+            <p class="text-xs text-slate-500 mt-1 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> ${a.location}</p>
+
+            <!-- Métricas Clave -->
+            <div class="grid grid-cols-3 gap-2 my-4 bg-slate-900/60 p-3 rounded-xl border border-slate-800/80 text-center">
+              <div>
+                <span class="block text-[10px] text-slate-500 uppercase font-semibold">Estatura</span>
+                <span class="text-xs font-bold text-slate-200">${a.height} cm</span>
+              </div>
+              <div>
+                <span class="block text-[10px] text-slate-500 uppercase font-semibold">Peso</span>
+                <span class="text-xs font-bold text-slate-200">${a.weight} kg</span>
+              </div>
+              <div>
+                <span class="block text-[10px] text-slate-500 uppercase font-semibold">Perfil</span>
+                <span class="text-xs font-bold text-slate-200">${a.foot}</span>
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed mb-6">${a.bio}</p>
+          </div>
+
+          <!-- Botón Modal -->
+          <button onclick="openAthleteModal(${a.id})" class="w-full bg-slate-900 hover:bg-brand-500 hover:text-slate-950 text-slate-300 py-3 rounded-xl font-bold text-xs border border-slate-800 transition flex items-center justify-center gap-2">
+            <i data-lucide="play-circle" class="w-4 h-4"></i> Ver Trial & Contactar
+          </button>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    // Filtrar por Deporte
+    function setSportFilter(sport) {
+      currentSportFilter = sport;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('bg-accent-500', 'text-slate-950');
+        btn.classList.add('bg-slate-900', 'text-slate-300');
+      });
+      event.target.classList.remove('bg-slate-900', 'text-slate-300');
+      event.target.classList.add('bg-accent-500', 'text-slate-950');
+
+      renderDirectory();
+    }
+
+    function filterAthletes() {
+      renderDirectory();
+    }
+
+    // Modal de Atleta
+    function openAthleteModal(id) {
+      const a = athletes.find(item => item.id === id);
+      if(!a) return;
+
+      const modal = document.getElementById('modal-athlete');
+      const content = document.getElementById('modal-content');
+
+      content.innerHTML = `
+        <div class="space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-2xl bg-brand-500/10 text-brand-400 font-black text-2xl flex items-center justify-center border border-brand-500/30">
+              ${a.name.charAt(0)}
+            </div>
+            <div>
+              <h3 class="text-2xl font-black text-white">${a.name}</h3>
+              <p class="text-sm text-brand-400 font-bold">${a.sport} • ${a.position}</p>
+              <p class="text-xs text-slate-400">${a.location} • ${a.age} años</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 space-y-2">
+            <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Video de Prueba / Highlights</p>
+            <a href="${a.video}" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-accent-400 hover:underline">
+              <i data-lucide="external-link" class="w-4 h-4"></i> Abrir enlace de prueba en pantalla completa
+            </a>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Trayectoria y Bio</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">${a.bio}</p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex gap-3">
+            <button onclick="alert('Iniciando contacto con ${a.name}...')" class="flex-1 bg-brand-500 hover:bg-brand-400 text-slate-950 py-3 rounded-xl font-bold text-sm transition">
+              Solicitar Contacto Directo
+            </button>
+          </div>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('modal-athlete').classList.add('hidden');
+    }
+  </script>
 </body>
 </html>
