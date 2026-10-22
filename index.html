@@ -349,7 +349,7 @@
           <div id="terms-container-atleta" class="flex items-start gap-3 bg-navy-900 p-4 rounded-xl border border-slate-800 transition-all duration-200">
             <input type="checkbox" id="terms-check-atleta" required onchange="resetTermsValidation('atleta')" class="mt-1 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
             <label for="terms-check-atleta" class="text-xs text-slate-400 leading-relaxed cursor-pointer select-none">
-              He leído y acepto los <a href="#terminos" onclick="openTermsTab(); return false;" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:underline">Términos y Condiciones</a> y la <a href="#terminos" onclick="openTermsTab(); return false;" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
+              He leído y acepto los <a href="/terminos" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Términos y Condiciones</a> y la <a href="/privacidad" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
             </label>
           </div>
           <p id="terms-error-atleta" class="hidden text-xs text-crimson-500 font-bold mt-2 flex items-center gap-1.5">
@@ -436,7 +436,7 @@
           <div id="terms-container-visor" class="flex items-start gap-3 bg-navy-900 p-4 rounded-xl border border-slate-800 transition-all duration-200">
             <input type="checkbox" id="terms-check-visor" required onchange="resetTermsValidation('visor')" class="mt-1 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
             <label for="terms-check-visor" class="text-xs text-slate-400 leading-relaxed cursor-pointer select-none">
-              He leído y acepto los <a href="#terminos" onclick="openTermsTab(); return false;" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:underline">Términos y Condiciones</a> y la <a href="#terminos" onclick="openTermsTab(); return false;" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
+              He leído y acepto los <a href="/terminos" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Términos y Condiciones</a> y la <a href="/privacidad" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
             </label>
           </div>
           <p id="terms-error-visor" class="hidden text-xs text-crimson-500 font-bold mt-2 flex items-center gap-1.5">
@@ -525,7 +525,7 @@
           3. Elegibilidad y Mayoría de Edad (+18)
         </h2>
         <p>
-          El registro para la creación de perfiles públicos de atleta está estrictamente reservado a personas que hayan cumplido los <strong>18 años de edad</strong> al momento de completar la solicitud. Al enviar el formulario de registro de Atleta, declaras bajo protesta de decir verdad que cuentas con la mayoría de edad legal aplicable en tu país de residencia. Talentz se reserva el derecho de solicitar documentación comprobatoria oficial en cualquier momento para validar el cumplimiento de este requisito.
+          El registro para la creación de perfiles públicos de atleta está strictly reservado a personas que hayan cumplido los <strong>18 años de edad</strong> al momento de completar la solicitud. Al enviar el formulario de registro de Atleta, declaras bajo protesta de decir verdad que cuentas con la mayoría de edad legal aplicable en tu país de residencia. Talentz se reserva el derecho de solicitar documentación comprobatoria oficial en cualquier momento para validar el cumplimiento de este requisito.
         </p>
       </section>
 
@@ -578,7 +578,7 @@
           8. Jurisdicción y Ley Aplicable
         </h2>
         <p>
-          Estos Términos y Condiciones se rigen por los principios generales del comercio electrónico y servicios de la sociedad de la información aplicables en América Latina. En caso de discrepancy o controversia relacionada con el servicio, las partes acuerdan privilegiar la resolución amistosa y la conciliación directa antes de acudir a instancias judiciales.
+          Estos Términos y Condiciones se rigen por los principios generales del comercio electrónico y servicios de la sociedad de la información aplicables en América Latina. En caso de discrepancia o controversia relacionada con el servicio, las partes acuerdan privilegiar la resolución amistosa y la conciliación directa antes de acudir a instancias judiciales.
         </p>
       </section>
 
@@ -699,11 +699,6 @@
     function showRegistrationTab(tabType) {
       showView('registro');
       toggleRegTab(tabType);
-    }
-
-    function openTermsTab() {
-      // Abre la vista legal sin perder los datos que el usuario ha llenado
-      window.open(window.location.pathname + '#terminos', '_blank');
     }
 
     function toggleRegTab(type) {
