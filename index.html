@@ -32,24 +32,20 @@
 </head>
 <body class="bg-navy-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-sport-500 selection:text-white">
 
-  <!-- NAVBAR STICKY GLASSMOCK CON NUEVO LOGO VECTORIAL DEPORTIVO -->
+  <!-- NAVBAR STICKY GLASSMOCK CON LOGO VECTORIAL DEPORTIVO -->
   <header class="bg-[#0B132B]/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex justify-between items-center">
       
       <!-- LOGO Y BRANDING CLICKABLE -->
       <a href="/" onclick="showView('hero'); return false;" class="flex items-center gap-2.5 group cursor-pointer selection:bg-transparent">
-        <!-- Isotipo SVG Vectorial de Velocidad / Escudo Deportivo (#FF6B00 + #3B82F6) -->
         <div class="relative flex items-center justify-center p-1">
           <svg class="w-8 h-8 sm:w-10 sm:h-10 text-[#FF6B00] group-hover:scale-110 transition-transform duration-200 filter drop-shadow-[0_0_12px_rgba(255,107,0,0.4)]" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Trazo Aerodinámico 'T' Itálica con cortes de velocidad -->
             <path d="M3 4H23L20 8.5H15L10.5 22H6L10.5 8.5H4.5L3 4Z" fill="#FF6B00"/>
             <path d="M19 4L25 4L22 8.5H16L19 4Z" fill="#FF8533"/>
-            <!-- Estela de Velocidad Azul Cobalto -->
             <path d="M26 4L22.5 9H18.5L22 4H26Z" fill="#3B82F6"/>
           </svg>
         </div>
 
-        <!-- Tipografía Deportivo-Itálica -->
         <div class="flex flex-col">
           <span class="text-2xl sm:text-3xl font-black italic tracking-wider text-white group-hover:text-sport-400 transition-colors leading-none">
             TALENTZ
@@ -95,7 +91,7 @@
     </div>
   </header>
 
-  <!-- VISTA 1: HERO / LANDING -->
+  <!-- VISTA 1: HERO / LANDING (COMPACTO CON TRAZO CURVO EN EL TITULAR) -->
   <section id="view-hero" class="flex-1 flex flex-col justify-center relative overflow-hidden py-4 lg:py-6">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,107,0,0.12),transparent_50%)]"></div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.12),transparent_50%)]"></div>
@@ -114,9 +110,14 @@
         </div>
       </div>
 
-      <!-- Titular Compactado -->
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-3 leading-tight max-w-4xl mx-auto">
-        Tu vitrina al <span class="text-sport-500">deporte</span> <span class="text-cobalt-400">profesional</span>.
+      <!-- Titular Unificado en Blanco con Swoosh Deportivo Naranja -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 leading-tight max-w-4xl mx-auto">
+        Tu vitrina al <span class="relative inline-block whitespace-nowrap">
+          deporte profesional
+          <svg class="absolute -bottom-2 sm:-bottom-3 left-0 w-full h-2.5 sm:h-3.5 text-[#FF6B00]" viewBox="0 0 200 15" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M2 11C60 3 140 3 198 10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </span>.
       </h1>
 
       <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto mb-6 font-normal leading-relaxed">
@@ -469,14 +470,12 @@
       <p>© 2026 TALENTZ SPORTS. Todos los derechos reservados. Exclusivo mayores de 18 años.</p>
       
       <div class="flex flex-wrap items-center justify-center gap-6">
-        <!-- Links de Navegación Footer -->
         <div class="flex gap-4 font-medium text-slate-400">
           <a href="#" class="hover:text-sport-400 transition-colors">Términos</a>
           <a href="#" class="hover:text-sport-400 transition-colors">Privacidad</a>
           <a href="#" class="hover:text-sport-400 transition-colors">Soporte Visores</a>
         </div>
 
-        <!-- Íconos de Redes Sociales Vectoriales -->
         <div class="flex items-center gap-3 border-t md:border-t-0 md:border-l border-slate-800 pt-3 md:pt-0 md:pl-6 text-slate-400">
           <a href="https://tiktok.com" target="_blank" rel="noopener" class="hover:text-[#FF6B00] transition-colors p-1" title="TikTok Talentz">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-2.22V8.2a6.34 6.34 0 0 0-5.11 6.18A6.34 6.34 0 0 0 10.7 20.7a6.34 6.34 0 0 0 6.33-6.33V8.87a8.28 8.28 0 0 0 4.81 1.56V6.98a4.85 4.85 0 0 1-2.25-.29z"/></svg>
