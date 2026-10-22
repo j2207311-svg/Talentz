@@ -124,10 +124,10 @@
           <span class="text-xs font-bold text-accent-400 uppercase tracking-wider">Para Cazatalentos & Coaches</span>
           <h2 class="text-2xl font-black text-white mt-1 mb-3">Soy Visor / Coach</h2>
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Crea tu perfil institucional, valida tu acreditación y accede al catálogo de prospectos filtrados.
+            Crea tu perfil institucional, valida tu acreditación y accede al directorio de prospectos calificados.
           </p>
           <div class="flex items-center gap-2 font-bold text-accent-400 text-sm group-hover:translate-x-2 transition-transform">
-            Registrarme como Visor <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            Explorar prospectos <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </div>
         </div>
 
@@ -189,6 +189,18 @@
           </div>
         </div>
 
+        <!-- Contacto Atleta -->
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Correo Electrónico *</label>
+            <input type="email" id="athlete-email" required placeholder="atleta@ejemplo.com" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Teléfono / WhatsApp *</label>
+            <input type="tel" id="athlete-phone" required placeholder="+52 55 1234 5678" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+          </div>
+        </div>
+
         <div class="grid sm:grid-cols-3 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Deporte *</label>
@@ -207,7 +219,7 @@
             <input type="text" id="athlete-position" required placeholder="Ej. Delantero Centro / Base" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">País / Ciudad *</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Ciudad, País *</label>
             <input type="text" id="athlete-location" required placeholder="Ej. Guadalajara, México" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
         </div>
@@ -307,7 +319,7 @@
             </select>
           </div>
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Deporte Principal *</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Deporte *</label>
             <select id="visor-sport" required class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
               <option value="Multideporte">Todos / Multideporte</option>
               <option value="Fútbol">Fútbol</option>
@@ -318,18 +330,18 @@
             </select>
           </div>
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">País / Base *</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Ciudad, País *</label>
             <input type="text" id="visor-location" required placeholder="Ej. Buenos Aires, Argentina" class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
         </div>
 
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Correo Electrónico Oficial *</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Correo Electrónico *</label>
             <input type="email" id="visor-email" required placeholder="scout@club.com" class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Teléfono / WhatsApp Directo *</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Teléfono / WhatsApp *</label>
             <input type="tel" id="visor-phone" required placeholder="+52 55 1234 5678" class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
         </div>
@@ -403,6 +415,8 @@
         id: 1,
         name: "Mateo Silva",
         age: 20,
+        email: "mateo@ejemplo.com",
+        phone: "+52 55 1234 5678",
         sport: "Fútbol",
         position: "Extremo Izquierdo",
         location: "CDMX, México",
@@ -418,6 +432,8 @@
         id: 2,
         name: "Camila Torres",
         age: 21,
+        email: "camila@ejemplo.com",
+        phone: "+57 300 123 4567",
         sport: "Básquetbol",
         position: "Base / Point Guard",
         location: "Medellín, Colombia",
@@ -490,6 +506,8 @@
         id: Date.now(),
         name: document.getElementById('athlete-name').value,
         age: parseInt(document.getElementById('athlete-age').value),
+        email: document.getElementById('athlete-email').value,
+        phone: document.getElementById('athlete-phone').value,
         sport: document.getElementById('athlete-sport').value,
         position: document.getElementById('athlete-position').value,
         location: document.getElementById('athlete-location').value,
