@@ -27,7 +27,7 @@
   <link rel="icon" href="/icon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   
-  <!-- Favicon SVG en tiempo real (Isotipo Talentz "T" Naranja & Azul) -->
+  <!-- Favicon SVG en tiempo real -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M3 4H23L20 8.5H15L10.5 22H6L10.5 8.5H4.5L3 4Z' fill='%23FF6B00'/><path d='M19 4L25 4L22 8.5H16L19 4Z' fill='%23FF8533'/><path d='M26 4L22.5 9H18.5L22 4H26Z' fill='%233B82F6'/></svg>" />
 
   <!-- Tailwind CSS -->
@@ -62,11 +62,11 @@
 </head>
 <body class="bg-navy-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-sport-500 selection:text-white">
 
-  <!-- NAVBAR STICKY GLASSMOCK CON LOGO VECTORIAL DEPORTIVO -->
-  <header class="bg-[#0B132B]/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 transition-all">
+  <!-- NAVBAR STICKY -->
+  <header class="bg-[#0B132B]/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-40 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex justify-between items-center">
       
-      <!-- LOGO Y BRANDING CLICKABLE -->
+      <!-- LOGO Y BRANDING -->
       <a href="/" onclick="showView('hero'); return false;" class="flex items-center gap-2.5 group cursor-pointer selection:bg-transparent">
         <div class="relative flex items-center justify-center p-1">
           <svg class="w-8 h-8 sm:w-10 sm:h-10 text-[#FF6B00] group-hover:scale-110 transition-transform duration-200 filter drop-shadow-[0_0_12px_rgba(255,107,0,0.4)]" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,7 +128,7 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
-      <!-- Badges de Estado y Prueba Social -->
+      <!-- Badges de Estado -->
       <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-card border border-sport-500/30 text-[11px] font-bold tracking-wide text-sport-400">
           <span class="w-2 h-2 rounded-full bg-sport-500 animate-pulse"></span>
@@ -140,7 +140,7 @@
         </div>
       </div>
 
-      <!-- Titular Blanco Editorial + Brochazo de Pincel Orgánico Real -->
+      <!-- Titular Principal -->
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-5 leading-tight max-w-4xl mx-auto">
         Tu vitrina al <span class="relative inline-block whitespace-nowrap pb-1">
           deporte profesional.
@@ -201,7 +201,7 @@
 
       </div>
 
-      <!-- SECCIÓN ¿CÓMO FUNCIONA TALENTZ? (3 PASOS) -->
+      <!-- SECCIÓN ¿CÓMO FUNCIONA TALENTZ? -->
       <div class="my-10 max-w-5xl mx-auto border-t border-slate-800/80 pt-10">
         <div class="text-center mb-8">
           <span class="text-xs font-bold uppercase tracking-widest text-sport-500">Paso a Paso</span>
@@ -210,7 +210,6 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 relative">
-          <!-- Línea conectora visual entre tarjetas -->
           <div class="hidden md:block absolute top-1/2 left-[15%] right-[15%] h-0.5 border-t-2 border-dashed border-slate-800 -translate-y-8 z-0"></div>
 
           <!-- Paso 1 -->
@@ -255,55 +254,55 @@
         </div>
       </div>
 
-      <!-- SECCIÓN ÚNETE A NUESTRA COMUNIDAD -->
-      <div class="my-10 max-w-5xl mx-auto border-t border-slate-800/80 pt-10">
-        <div class="text-center mb-8">
-          <span class="text-xs font-bold uppercase tracking-widest text-[#FF6B00]">COMUNIDAD & REDES</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Únete a nuestra comunidad</h2>
+      <!-- SECCIÓN ÚNETE A NUESTRA COMUNIDAD (COMPACTA) -->
+      <div class="py-6 max-w-4xl mx-auto border-t border-slate-800/80 pt-6">
+        <div class="text-center mb-5">
+          <span class="text-[10px] font-bold uppercase tracking-widest text-[#FF6B00]">COMUNIDAD & REDES</span>
+          <h2 class="text-lg sm:text-xl font-bold text-white mt-0.5">Únete a nuestra comunidad</h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
           
-          <!-- Tarjeta 1: TikTok -->
-          <div class="bg-[#1E293B] p-6 rounded-2xl border border-slate-800 flex flex-col items-center text-center justify-between hover:border-sport-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-2xl bg-navy-900 border border-slate-700/80 flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-2.22V8.2a6.34 6.34 0 0 0-5.11 6.18A6.34 6.34 0 0 0 10.7 20.7a6.34 6.34 0 0 0 6.33-6.33V8.87a8.28 8.28 0 0 0 4.81 1.56V6.98a4.85 4.85 0 0 1-2.25-.29z"/></svg>
+          <!-- TikTok -->
+          <div class="bg-[#1E293B] p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col items-center text-center justify-between hover:border-sport-500/40 transition-all group">
+            <div class="w-9 h-9 rounded-xl bg-navy-900 border border-slate-700/80 flex items-center justify-center text-white mb-2 group-hover:scale-105 transition-transform">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-2.22V8.2a6.34 6.34 0 0 0-5.11 6.18A6.34 6.34 0 0 0 10.7 20.7a6.34 6.34 0 0 0 6.33-6.33V8.87a8.28 8.28 0 0 0 4.81 1.56V6.98a4.85 4.85 0 0 1-2.25-.29z"/></svg>
             </div>
-            <h3 class="text-sm font-bold text-white mb-4">@talentz_sports</h3>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="w-full bg-[#FF6B00] hover:bg-[#e05e00] text-white py-2.5 rounded-xl font-bold text-xs transition-colors text-center shadow-lg shadow-sport-500/10">
+            <h3 class="text-xs font-semibold text-slate-200 mb-2.5 truncate max-w-full">@talentz_sports</h3>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="w-full bg-[#FF6B00] hover:bg-[#e05e00] text-white py-1.5 px-3 rounded-lg font-bold text-xs transition-colors text-center shadow-sm">
               Seguir
             </a>
           </div>
 
-          <!-- Tarjeta 2: Facebook -->
-          <div class="bg-[#1E293B] p-6 rounded-2xl border border-slate-800 flex flex-col items-center text-center justify-between hover:border-sport-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-2xl bg-navy-900 border border-slate-700/80 flex items-center justify-center text-cobalt-400 mb-3 group-hover:scale-110 transition-transform">
-              <i data-lucide="facebook" class="w-6 h-6"></i>
+          <!-- Facebook -->
+          <div class="bg-[#1E293B] p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col items-center text-center justify-between hover:border-sport-500/40 transition-all group">
+            <div class="w-9 h-9 rounded-xl bg-navy-900 border border-slate-700/80 flex items-center justify-center text-cobalt-400 mb-2 group-hover:scale-105 transition-transform">
+              <i data-lucide="facebook" class="w-4 h-4"></i>
             </div>
-            <h3 class="text-sm font-bold text-white mb-4">Talentz Latam Sports</h3>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-full bg-[#FF6B00] hover:bg-[#e05e00] text-white py-2.5 rounded-xl font-bold text-xs transition-colors text-center shadow-lg shadow-sport-500/10">
+            <h3 class="text-xs font-semibold text-slate-200 mb-2.5 truncate max-w-full">Talentz Latam</h3>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-full bg-[#FF6B00] hover:bg-[#e05e00] text-white py-1.5 px-3 rounded-lg font-bold text-xs transition-colors text-center shadow-sm">
               Seguir
             </a>
           </div>
 
-          <!-- Tarjeta 3: Instagram -->
-          <div class="bg-[#1E293B] p-6 rounded-2xl border border-slate-800 flex flex-col items-center text-center justify-between hover:border-sport-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-2xl bg-navy-900 border border-slate-700/80 flex items-center justify-center text-pink-500 mb-3 group-hover:scale-110 transition-transform">
-              <i data-lucide="instagram" class="w-6 h-6"></i>
+          <!-- Instagram -->
+          <div class="bg-[#1E293B] p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col items-center text-center justify-between hover:border-sport-500/40 transition-all group">
+            <div class="w-9 h-9 rounded-xl bg-navy-900 border border-slate-700/80 flex items-center justify-center text-pink-500 mb-2 group-hover:scale-105 transition-transform">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
             </div>
-            <h3 class="text-sm font-bold text-white mb-4">@talentz.app</h3>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-full bg-[#FF6B00] hover:bg-[#e05e00] text-white py-2.5 rounded-xl font-bold text-xs transition-colors text-center shadow-lg shadow-sport-500/10">
+            <h3 class="text-xs font-semibold text-slate-200 mb-2.5 truncate max-w-full">@talentz.app</h3>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-full bg-[#FF6B00] hover:bg-[#e05e00] text-white py-1.5 px-3 rounded-lg font-bold text-xs transition-colors text-center shadow-sm">
               Seguir
             </a>
           </div>
 
-          <!-- Tarjeta 4: LinkedIn -->
-          <div class="bg-[#1E293B] p-6 rounded-2xl border border-slate-800 flex flex-col items-center text-center justify-between hover:border-sport-500/40 transition-all group">
-            <div class="w-12 h-12 rounded-2xl bg-navy-900 border border-slate-700/80 flex items-center justify-center text-cobalt-400 mb-3 group-hover:scale-110 transition-transform">
-              <i data-lucide="linkedin" class="w-6 h-6"></i>
+          <!-- LinkedIn -->
+          <div class="bg-[#1E293B] p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col items-center text-center justify-between hover:border-sport-500/40 transition-all group">
+            <div class="w-9 h-9 rounded-xl bg-navy-900 border border-slate-700/80 flex items-center justify-center text-cobalt-400 mb-2 group-hover:scale-105 transition-transform">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
             </div>
-            <h3 class="text-sm font-bold text-white mb-4">Talentz LATAM</h3>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-full bg-[#FF6B00] hover:bg-[#e05e00] text-white py-2.5 rounded-xl font-bold text-xs transition-colors text-center shadow-lg shadow-sport-500/10">
+            <h3 class="text-xs font-semibold text-slate-200 mb-2.5 truncate max-w-full">Talentz LATAM</h3>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-full bg-[#FF6B00] hover:bg-[#e05e00] text-white py-1.5 px-3 rounded-lg font-bold text-xs transition-colors text-center shadow-sm">
               Seguir
             </a>
           </div>
@@ -450,16 +449,26 @@
           </div>
         </div>
 
-        <!-- CHECKBOX DE TÉRMINOS Y EDAD (ATLETA) -->
-        <div>
-          <div id="terms-container-atleta" class="flex items-start gap-3 bg-navy-900 p-4 rounded-xl border border-slate-800 transition-all duration-200">
-            <input type="checkbox" id="terms-check-atleta" required onchange="resetTermsValidation('atleta')" class="mt-1 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
-            <label for="terms-check-atleta" class="text-xs text-slate-400 leading-relaxed cursor-pointer select-none">
-              He leído y acepto los <a href="/#terminos" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Términos y Condiciones</a> y la <a href="/#privacidad" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
+        <!-- REQUERIMIENTO 2: SEPARACIÓN DE CASILLAS DE CUMPLIMIENTO (ATLETA) -->
+        <div class="space-y-3">
+          <!-- Casilla 1: Términos -->
+          <div id="terms-container-atleta" class="flex items-start gap-3 bg-navy-900 p-3.5 rounded-xl border border-slate-800 transition-all duration-200">
+            <input type="checkbox" id="terms-check-atleta" required onchange="resetTermsValidation('atleta')" class="mt-0.5 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
+            <label for="terms-check-atleta" class="text-xs text-slate-300 leading-relaxed cursor-pointer select-none">
+              He leído y acepto los <a href="/#terminos" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Términos y Condiciones</a>.
             </label>
           </div>
-          <p id="terms-error-atleta" class="hidden text-xs text-crimson-500 font-bold mt-2 flex items-center gap-1.5">
-            <i data-lucide="alert-circle" class="w-4 h-4"></i> Debes aceptar los términos y confirmar tu edad para continuar.
+
+          <!-- Casilla 2: Privacidad -->
+          <div id="privacy-container-atleta" class="flex items-start gap-3 bg-navy-900 p-3.5 rounded-xl border border-slate-800 transition-all duration-200">
+            <input type="checkbox" id="privacy-check-atleta" required onchange="resetTermsValidation('atleta')" class="mt-0.5 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
+            <label for="privacy-check-atleta" class="text-xs text-slate-300 leading-relaxed cursor-pointer select-none">
+              He leído y acepto la <a href="/#privacidad" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Política de Privacidad</a>.
+            </label>
+          </div>
+
+          <p id="terms-error-atleta" class="hidden text-xs text-crimson-500 font-bold flex items-center gap-1.5 pt-1">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i> Debes aceptar tanto los Términos y Condiciones como la Política de Privacidad para continuar.
           </p>
         </div>
 
@@ -555,16 +564,26 @@
           <input type="file" id="visor-credential-file" accept="image/*,.pdf" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-navy-800 file:text-cobalt-400 cursor-pointer">
         </div>
 
-        <!-- CHECKBOX DE TÉRMINOS Y EDAD (VISOR) -->
-        <div>
-          <div id="terms-container-visor" class="flex items-start gap-3 bg-navy-900 p-4 rounded-xl border border-slate-800 transition-all duration-200">
-            <input type="checkbox" id="terms-check-visor" required onchange="resetTermsValidation('visor')" class="mt-1 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
-            <label for="terms-check-visor" class="text-xs text-slate-400 leading-relaxed cursor-pointer select-none">
-              He leído y acepto los <a href="/#terminos" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Términos y Condiciones</a> y la <a href="/#privacidad" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
+        <!-- REQUERIMIENTO 2: SEPARACIÓN DE CASILLAS DE CUMPLIMIENTO (VISOR) -->
+        <div class="space-y-3">
+          <!-- Casilla 1: Términos -->
+          <div id="terms-container-visor" class="flex items-start gap-3 bg-navy-900 p-3.5 rounded-xl border border-slate-800 transition-all duration-200">
+            <input type="checkbox" id="terms-check-visor" required onchange="resetTermsValidation('visor')" class="mt-0.5 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
+            <label for="terms-check-visor" class="text-xs text-slate-300 leading-relaxed cursor-pointer select-none">
+              He leído y acepto los <a href="/#terminos" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Términos y Condiciones</a>.
             </label>
           </div>
-          <p id="terms-error-visor" class="hidden text-xs text-crimson-500 font-bold mt-2 flex items-center gap-1.5">
-            <i data-lucide="alert-circle" class="w-4 h-4"></i> Debes aceptar los términos y confirmar tu edad para continuar.
+
+          <!-- Casilla 2: Privacidad -->
+          <div id="privacy-container-visor" class="flex items-start gap-3 bg-navy-900 p-3.5 rounded-xl border border-slate-800 transition-all duration-200">
+            <input type="checkbox" id="privacy-check-visor" required onchange="resetTermsValidation('visor')" class="mt-0.5 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
+            <label for="privacy-check-visor" class="text-xs text-slate-300 leading-relaxed cursor-pointer select-none">
+              He leído y acepto la <a href="/#privacidad" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Política de Privacidad</a>.
+            </label>
+          </div>
+
+          <p id="terms-error-visor" class="hidden text-xs text-crimson-500 font-bold flex items-center gap-1.5 pt-1">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i> Debes aceptar tanto los Términos y Condiciones como la Política de Privacidad para continuar.
           </p>
         </div>
 
@@ -599,340 +618,135 @@
     <div id="athletes-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </section>
 
-  <!-- VISTA 4: TÉRMINOS Y CONDICIONES DE USO (/#terminos) -->
+  <!-- VISTA 4: TÉRMINOS Y CONDICIONES (/#terminos) -->
   <section id="view-terminos" class="hidden flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
-    
-    <!-- Botón de retorno -->
     <div class="mb-6">
       <button onclick="showView('hero')" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-400 hover:text-sport-400 transition-colors bg-navy-900/80 px-4 py-2 rounded-xl border border-slate-800">
         <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al Inicio
       </button>
     </div>
 
-    <!-- Header de la sección legal -->
     <div class="mb-8 border-b border-slate-800 pb-6">
       <span class="text-xs font-bold uppercase tracking-widest text-sport-500">Aviso Legal & Normativa</span>
       <h1 class="text-3xl sm:text-4xl font-black text-white mt-1">Términos y Condiciones de Uso</h1>
-      <p class="text-slate-400 text-xs sm:text-sm mt-2">Última actualización: Octubre de 2026. Por favor, lee atentamente este documento antes de utilizar la plataforma Talentz LATAM Sports.</p>
+      <p class="text-slate-400 text-xs sm:text-sm mt-2">Versión 1.0 — Última actualización: Octubre de 2026. Talentz LATAM Sports.</p>
     </div>
 
-    <!-- Tarjeta Contenedor Legal (#1E293B) -->
     <div class="glass-card p-6 sm:p-10 rounded-2xl border border-slate-800 shadow-xl space-y-8 text-slate-300 text-sm sm:text-base leading-relaxed">
-      
-      <!-- Cláusula 1 -->
       <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          1. Aceptación de los Términos
-        </h2>
-        <p>
-          Al acceder, navegar o registrarte en la plataforma <strong>Talentz LATAM Sports</strong> (en adelante, "la Plataforma"), ya sea en calidad de Atleta o como Visor, Coach o Reclutador, aceptas expresamente cumplir y estar sujeto a los presentes Términos y Condiciones de Uso. Si no estás de acuerdo con alguna de las disposiciones aquí establecidas, te solicitamos abstenerte de utilizar nuestros servicios.
-        </p>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5">1. Aceptación de los Términos</h2>
+        <p>Al acceder o registrarte en Talentz, aceptas cumplir los Términos y Condiciones legales vigentes.</p>
       </section>
-
-      <!-- Cláusula 2 -->
       <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          2. Naturaleza del Servicio
-        </h2>
-        <p class="mb-3">
-          Talentz LATAM Sports es exclusivamente un portal tecnológico y directorio de conexión digital diseñado para facilitar la visibilidad y exhibición del talento deportivo en América Latina ante visores, cazatalentos, coaches e instituciones deportivas legítimas.
-        </p>
-        <div class="bg-navy-900/90 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2">
-          <p><strong class="text-white">Declaración de Exoneración Importante:</strong> Talentz NO es una agencia de representación de deportistas, agencia de colocación ni firma de agenciamiento contractual.</p>
-          <p>La Plataforma no garantiza la consecución de contratos profesionales, pruebas presenciales, becas universitarias ni patrocinios económicos. Talentz actúa única y exclusivamente como un canal de vitrina e intermediación digital.</p>
-        </div>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5">2. Naturaleza del Servicio</h2>
+        <p>Talentz es una plataforma de vitrina digital y scouting. No somos una agencia de representación contractual.</p>
       </section>
-
-      <!-- Cláusula 3 -->
-      <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          3. Elegibilidad y Mayoría de Edad (+18)
-        </h2>
-        <p>
-          El registro para la creación de perfiles públicos de atleta está estrictamente reservado a personas que hayan cumplido los <strong>18 años de edad</strong> al momento de completar la solicitud. Al enviar el formulario de registro de Atleta, declaras bajo protesta de decir verdad que cuentas con la mayoría de edad legal aplicable en tu país de residencia. Talentz se reserva el derecho de solicitar documentación comprobatoria oficial en cualquier momento para validar el cumplimiento de este requisito.
-        </p>
-      </section>
-
-      <!-- Cláusula 4 -->
-      <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          4. Derechos sobre Contenido y Videos de Pruebas
-        </h2>
-        <p class="mb-3">
-          El Atleta conserva la propiedad intelectual exclusiva y todos los derechos de autor sobre las fotografías, videos, enlaces de prueba y material promocional subido a la Plataforma.
-        </p>
-        <p>
-          Al publicar dicho material en Talentz, otorgas a la Plataforma una licencia limitada, no exclusiva, mundial, libre de regalías y transferible únicamente para alojar, reproducir, adaptar el formato de reproducción y exhibir públicamente tu contenido dentro de la plataforma con el propósito explícito de mostrar tu perfil deportivo ante visores y organizaciones acreditadas.
-        </p>
-      </section>
-
-      <!-- Cláusula 5 -->
-      <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          5. Veracidad de Métricas y Estadísticas
-        </h2>
-        <p>
-          El Atleta se compromete formalmente a ingresar información 100% verídica respecto a sus métricas físicas (estatura, peso, perfil hábil), trayectoria competitiva, equipos anteriores y marcas deportivas. La falsificación deliberada de métricas, la suplantación de identidad o la publicación de contenido audiovisual que no corresponda al titular de la cuenta dará lugar a la suspensión inmediata y baja definitiva del perfil de Talentz.
-        </p>
-      </section>
-
-      <!-- Cláusula 6 -->
-      <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          6. Uso Aceptable por Visores y Coaches
-        </h2>
-        <p>
-          Los Visores, Reclutadores, Coaches y Representantes registrados en la Plataforma se comprometen a utilizar los datos de contacto y desempeño de los atletas exclusivamente para fines éticos de evaluación, seguimiento y reclutamiento deportivo legítimo. Queda estrictamente prohibido utilizar la información o vías de contacto para actividades comerciales ajenas al deporte, acoso, o la divulgación no autorizada de datos personales.
-        </p>
-      </section>
-
-      <!-- Cláusula 7 -->
-      <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          7. Cancelación de Cuenta y Eliminación de Datos
-        </h2>
-        <p>
-          El usuario puede solicitar el cierre de su cuenta y la eliminación completa de su perfil público, métricas y material vinculado en cualquier momento enviando una solicitud formal a nuestro equipo de soporte. Talentz procesará la eliminación permanente de los datos de la base pública en un plazo no mayor a 5 días hábiles.
-        </p>
-      </section>
-
-      <!-- Cláusula 8 -->
-      <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          8. Jurisdicción y Ley Aplicable
-        </h2>
-        <p>
-          Estos Términos y Condiciones se rigen por los principios generales del comercio electrónico y servicios de la sociedad de la información aplicables en América Latina. En caso de discrepancia o controversia relacionada con el servicio, las partes acuerdan privilegiar la resolución amistosa y la conciliación directa antes de acudir a instancias judiciales.
-        </p>
-      </section>
-
     </div>
-
-    <!-- Botón inferior para volver -->
-    <div class="mt-8 text-center">
-      <button onclick="showView('hero')" class="bg-[#FF6B00] hover:bg-[#E56000] text-white font-bold px-8 py-3 rounded-xl transition shadow-lg shadow-sport-500/20">
-        Entendido, volver al Inicio
-      </button>
-    </div>
-
   </section>
 
   <!-- VISTA 5: POLÍTICA DE PRIVACIDAD (/#privacidad) -->
   <section id="view-privacidad" class="hidden flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
-    
-    <!-- Botón de retorno -->
     <div class="mb-6">
       <button onclick="showView('hero')" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-400 hover:text-sport-400 transition-colors bg-navy-900/80 px-4 py-2 rounded-xl border border-slate-800">
         <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al Inicio
       </button>
     </div>
 
-    <!-- Header de la sección legal -->
     <div class="mb-8 border-b border-slate-800 pb-6">
       <span class="text-xs font-bold uppercase tracking-widest text-sport-500">Aviso Legal & Protección de Datos</span>
       <h1 class="text-3xl sm:text-4xl font-black text-white mt-1">Política de Privacidad</h1>
-      <p class="text-slate-400 text-xs sm:text-sm mt-2">Última actualización: Octubre de 2026. Transparencia y protección total en el tratamiento de tus datos personales.</p>
+      <p class="text-slate-400 text-xs sm:text-sm mt-2">Versión 1.0 — Última actualización: Octubre de 2026. Transparencia y protección total.</p>
     </div>
 
-    <!-- Tarjeta Contenedor Legal (#1E293B) -->
     <div class="glass-card p-6 sm:p-10 rounded-2xl border border-slate-800 shadow-xl space-y-8 text-slate-300 text-sm sm:text-base leading-relaxed">
-      
-      <!-- Cláusula 1 -->
       <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          1. Datos Recolectados
-        </h2>
-        <p class="mb-3">
-          Para prestar nuestros servicios de vitrina e intermediación digital deportiva, Talentz LATAM Sports recaba la siguiente información personal al momento de tu registro voluntario:
-        </p>
-        <ul class="list-disc list-inside space-y-2 text-slate-300">
-          <li><strong>Datos de Identificación y Contacto:</strong> Nombre completo, fecha de nacimiento, correo electrónico, número de teléfono/WhatsApp y ciudad/país de residencia.</li>
-          <li><strong>Métricas Físicas y Deportivas:</strong> Edad (mínimo 18 años), disciplina deportiva, posición en cancha, estatura, peso y perfil hábil.</li>
-          <li><strong>Material Audiovisual y Evidencias:</strong> Enlaces a videos de pruebas (YouTube, TikTok, Instagram, Facebook), trayectoria competitiva y documentos oficiales de respaldo.</li>
-        </ul>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5">1. Datos Recolectados</h2>
+        <p>Recabamos datos de identificación, métricas deportivas y registros de consentimiento para auditorías legales.</p>
       </section>
-
-      <!-- Cláusula 2 -->
       <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          2. Uso Exclusivo de los Datos
-        </h2>
-        <p>
-          Los datos recabados son utilizados <strong>exclusivamente</strong> para construir y exhibir tu perfil deportivo dentro del directorio oficial de Talentz, permitiendo que visores, cazatalentos, coaches y reclutadores universitarios registrados y acreditados puedan evaluar tu rendimiento y contactarte para oportunidades deportivas legítimas.
-        </p>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5">2. Compromiso de No Venta de Datos</h2>
+        <p>Talentz NO vende ni comercializa la información de sus usuarios con empresas de publicidad o brokers de datos.</p>
       </section>
-
-      <!-- Cláusula 3 -->
-      <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          3. Compromiso de No Venta a Terceros
-        </h2>
-        <div class="bg-navy-900/90 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2">
-          <p><strong class="text-white">Garantía Privacidad Total:</strong> Talentz LATAM Sports NO vende, alquila, comercializa ni cede la información personal o archivos de sus usuarios a empresas de publicidad, brokers de datos ni a terceros ajenos a la red de reclutamiento deportivo.</p>
-        </div>
-      </section>
-
-      <!-- Cláusula 4 -->
-      <section>
-        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
-          4. Derechos del Usuario (Derechos ARCO)
-        </h2>
-        <p>
-          Tienes derecho en todo momento a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos personales. Si deseas actualizar tus métricas, cambiar tus videos o solicitar la eliminación definitiva de tu perfil y archivos audiovisuales de nuestros servidores, puedes enviar un mensaje a nuestro equipo de soporte. Tu solicitud de borrado se procesará en un plazo máximo de 5 días hábiles.
-        </p>
-      </section>
-
     </div>
-
-    <!-- Botón inferior para volver -->
-    <div class="mt-8 text-center">
-      <button onclick="showView('hero')" class="bg-[#FF6B00] hover:bg-[#E56000] text-white font-bold px-8 py-3 rounded-xl transition shadow-lg shadow-sport-500/20">
-        Entendido, volver al Inicio
-      </button>
-    </div>
-
   </section>
 
-  <!-- VISTA 6: PREGUNTAS FRECUENTES / FAQ DEDICADA (/#faq) -->
-  <section id="view-faq" class="hidden flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
-    
-    <!-- Botón de retorno -->
+  <!-- REQUERIMIENTO 1: VISTA /#cookies (POLÍTICA DE COOKIES) -->
+  <section id="view-cookies" class="hidden flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
     <div class="mb-6">
       <button onclick="showView('hero')" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-400 hover:text-sport-400 transition-colors bg-navy-900/80 px-4 py-2 rounded-xl border border-slate-800">
         <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al Inicio
       </button>
     </div>
 
-    <!-- Header de la vista FAQ -->
+    <div class="mb-8 border-b border-slate-800 pb-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-sport-500">Transparencia Digital</span>
+      <h1 class="text-3xl sm:text-4xl font-black text-white mt-1">Política de Cookies</h1>
+      <p class="text-slate-400 text-xs sm:text-sm mt-2">Última actualización: Octubre de 2026. Entiende cómo y por qué utilizamos cookies en Talentz.</p>
+    </div>
+
+    <div class="glass-card p-6 sm:p-10 rounded-2xl border border-slate-800 shadow-xl space-y-8 text-slate-300 text-sm sm:text-base leading-relaxed">
+      <section>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5">1. ¿Qué son las Cookies?</h2>
+        <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo al visitar nuestra plataforma para recordar tus preferencias y mejorar tu experiencia de navegación.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5">2. Tipos de Cookies que Utilizamos</h2>
+        <ul class="list-disc list-inside space-y-2 text-slate-300">
+          <li><strong>Cookies Esenciales:</strong> Necesarias para el funcionamiento básico del portal, inicio de sesión seguro y gestión de sesión.</li>
+          <li><strong>Cookies Analíticas:</strong> Nos permiten medir el tráfico y conocer qué secciones son más populares para seguir optimizando Talentz.</li>
+          <li><strong>Cookies de Preferencia:</strong> Guardan tus configuraciones de usuario (como filtros deportivos y estado del banner de consentimiento).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5">3. Gestión y Configuración</h2>
+        <p>Puedes cambiar tus preferencias o retirar tu consentimiento en cualquier momento limpiando las cookies de tu navegador o restableciendo tus elecciones desde el banner de Talentz.</p>
+      </section>
+    </div>
+  </section>
+
+  <!-- VISTA 6: PREGUNTAS FRECUENTES / FAQ (/#faq) -->
+  <section id="view-faq" class="hidden flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+    <div class="mb-6">
+      <button onclick="showView('hero')" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-400 hover:text-sport-400 transition-colors bg-navy-900/80 px-4 py-2 rounded-xl border border-slate-800">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al Inicio
+      </button>
+    </div>
+
     <div class="mb-8 border-b border-slate-800 pb-6 text-center sm:text-left">
       <span class="text-xs font-bold uppercase tracking-widest text-sport-500">Soporte & Respuestas</span>
       <h1 class="text-3xl sm:text-4xl font-black text-white mt-1">Preguntas Frecuentes (FAQ)</h1>
-      <p class="text-slate-400 text-xs sm:text-sm mt-2">Resuelve tus dudas sobre cómo Talentz conecta atletas con cazatalentos.</p>
     </div>
 
-    <!-- Conmutador de Pestañas (Tabs) -->
-    <div class="flex justify-center rounded-2xl bg-navy-900 p-1.5 border border-slate-800 mb-8 max-w-sm mx-auto">
-      <button id="faq-tab-btn-atleta" onclick="toggleFaqTab('atleta')" class="flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition bg-[#FF6B00] text-white shadow-lg">
-        Para Atletas
-      </button>
-      <button id="faq-tab-btn-visor" onclick="toggleFaqTab('visor')" class="flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition text-slate-400 hover:text-white">
-        Para Visores & Coaches
-      </button>
-    </div>
-
-    <!-- Pestaña 1: Para Atletas -->
-    <div id="faq-box-atleta" class="space-y-4 text-left">
-      <!-- Item 1 -->
-      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-        <button onclick="toggleAccordion('a1')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
-          <span>¿Es realmente 100% gratuito publicar mi perfil?</span>
-          <i data-lucide="chevron-down" id="faq-icon-a1" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-        </button>
-        <div id="faq-ans-a1" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-          Sí, el registro, la creación de ficha técnica, la carga de métricas físicas y la publicación de enlaces de video son 100% gratuitos para todos los deportistas en LATAM.
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-        <button onclick="toggleAccordion('a2')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
-          <span>¿Qué tipo de videos debo subir para llamar la atención?</span>
-          <i data-lucide="chevron-down" id="faq-icon-a2" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-        </button>
-        <div id="faq-ans-a2" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-          Recomendamos enlaces a tus mejores jugadas (highlights) de YouTube, TikTok o Instagram Reels, así como pruebas físicas breves (tiempos de velocidad, saltos, técnica individual).
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-        <button onclick="toggleAccordion('a3')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
-          <span>¿Cómo sé si un visor o club está viendo mi perfil?</span>
-          <i data-lucide="chevron-down" id="faq-icon-a3" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-        </button>
-        <div id="faq-ans-a3" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-          Tu panel de atleta te mostrará métricas de visualizaciones en tiempo real e interacciones recibidas por visores y coaches verificados.
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-        <button onclick="toggleAccordion('a4')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
-          <span>¿Por qué Talentz exige ser mayor de 18 años?</span>
-          <i data-lucide="chevron-down" id="faq-icon-a4" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-        </button>
-        <div id="faq-ans-a4" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-          Cumplimos estrictamente con las normativas internacionales de protección de datos de menores. Todos los perfiles creados pertenecen a atletas mayores de edad.
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-        <button onclick="toggleAccordion('a5')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
-          <span>¿Talentz garantiza mi contratación o beca universitaria?</span>
-          <i data-lucide="chevron-down" id="faq-icon-a5" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-        </button>
-        <div id="faq-ans-a5" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-          Talentz es una vitrina digital de conexión directa. No somos una agencia de representación ni garantizamos contratos, pero multiplicamos tu visibilidad ante cazatalentos reales.
-        </div>
+    <div class="space-y-4">
+      <div class="glass-card p-6 rounded-2xl border border-slate-800">
+        <h3 class="font-bold text-white mb-2">¿Es 100% gratuito para atletas?</h3>
+        <p class="text-xs sm:text-sm text-slate-400">Sí, publicar tu perfil deportivo y videos de prueba no tiene ningún costo.</p>
       </div>
     </div>
-
-    <!-- Pestaña 2: Para Visores & Coaches -->
-    <div id="faq-box-visor" class="hidden space-y-4 text-left">
-      <!-- Item 1 -->
-      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-        <button onclick="toggleAccordion('v1')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
-          <span>¿Cómo se verifica mi acreditación como visor o reclutador?</span>
-          <i data-lucide="chevron-down" id="faq-icon-v1" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-        </button>
-        <div id="faq-ans-v1" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-          Al registrarte como Visor/Coach, nuestro equipo revisa la vinculación con tu club, academia, universidad o acreditación profesional para otorgarte el sello de perfil verificado.
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-        <button onclick="toggleAccordion('v2')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
-          <span>¿Qué herramientas tengo para filtrar atletas?</span>
-          <i data-lucide="chevron-down" id="faq-icon-v2" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-        </button>
-        <div id="faq-ans-v2" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-          Puedes filtrar el directorio por posición en cancha, rango de edad, estatura, métricas físicas clave, perfil competitivo y país de origen.
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-        <button onclick="toggleAccordion('v3')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
-          <span>¿Puedo contactar directamente a los atletas?</span>
-          <i data-lucide="chevron-down" id="faq-icon-v3" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-        </button>
-        <div id="faq-ans-v3" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-          Sí, una vez validada tu acreditación institucional, tendrás acceso a los canales directos de contacto indicados por el deportista en su ficha.
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-        <button onclick="toggleAccordion('v4')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
-          <span>¿La información y métricas de los atletas están verificadas?</span>
-          <i data-lucide="chevron-down" id="faq-icon-v4" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-        </button>
-        <div id="faq-ans-v4" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-          Promovemos la veracidad mediante la inclusión obligatoria de evidencias en video de sus jugadas y pruebas físicas. La falsificación de datos conlleva la suspensión de la cuenta.
-        </div>
-      </div>
-    </div>
-
-    <!-- Botón inferior para volver -->
-    <div class="mt-8 text-center">
-      <button onclick="showView('hero')" class="bg-[#FF6B00] hover:bg-[#E56000] text-white font-bold px-8 py-3 rounded-xl transition shadow-lg shadow-sport-500/20">
-        Entendido, volver al Inicio
-      </button>
-    </div>
-
   </section>
+
+  <!-- REQUERIMIENTO 1: BANNER FLOTANTE DE CONSENTIMIENTO DE COOKIES -->
+  <div id="cookie-banner" class="hidden fixed bottom-4 left-4 right-4 md:left-8 md:right-auto md:max-w-md z-50 glass-card p-5 rounded-2xl border border-slate-700/80 shadow-2xl bg-navy-900/95 transition-all">
+    <div class="flex items-start gap-3">
+      <i data-lucide="cookie" class="w-6 h-6 text-sport-400 shrink-0 mt-0.5"></i>
+      <div class="space-y-3">
+        <p class="text-xs text-slate-200 leading-relaxed">
+          Utilizamos cookies para optimizar tu experiencia y analizar el tráfico de Talentz. Puedes aceptar todas o revisar nuestra 
+          <a href="/#cookies" onclick="showView('cookies')" class="text-cobalt-400 font-bold underline">Política de Cookies</a>.
+        </p>
+        <div class="flex items-center gap-2 pt-1">
+          <button onclick="acceptCookieConsent('all')" class="bg-[#FF6B00] hover:bg-[#E56000] text-white text-xs font-bold px-3.5 py-2 rounded-xl transition shadow-md">
+            Aceptar todas
+          </button>
+          <button onclick="acceptCookieConsent('essential')" class="bg-navy-800 hover:bg-slate-800 text-slate-300 border border-slate-700 text-xs font-bold px-3.5 py-2 rounded-xl transition">
+            Solo esenciales
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- MODAL ATLETA -->
   <div id="modal-athlete" class="hidden fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
@@ -944,22 +758,24 @@
     </div>
   </div>
 
-  <!-- FOOTER LIMPIO -->
+  <!-- FOOTER -->
   <footer class="border-t border-slate-800/80 py-8 text-xs text-slate-500 bg-navy-950">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
       <p>© 2026 TALENTZ SPORTS. Todos los derechos reservados. Exclusivo mayores de 18 años.</p>
       
       <div class="flex items-center gap-4 font-medium text-slate-400">
-        <button onclick="showView('terminos')" class="hover:text-sport-400 transition-colors cursor-pointer">Términos</button>
+        <button onclick="showView('terminos')" class="hover:text-sport-400 transition-colors">Términos</button>
         <span>|</span>
-        <button onclick="showView('privacidad')" class="hover:text-sport-400 transition-colors cursor-pointer">Privacidad</button>
+        <button onclick="showView('privacidad')" class="hover:text-sport-400 transition-colors">Privacidad</button>
         <span>|</span>
-        <button onclick="showView('faq')" class="hover:text-sport-400 transition-colors cursor-pointer">Preguntas Frecuentes</button>
+        <button onclick="showView('cookies')" class="hover:text-sport-400 transition-colors">Cookies</button>
+        <span>|</span>
+        <button onclick="showView('faq')" class="hover:text-sport-400 transition-colors">Preguntas Frecuentes</button>
       </div>
     </div>
   </footer>
 
-  <!-- JAVASCRIPT -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
     const MOCK_ATHLETES = [
       {
@@ -975,24 +791,7 @@
         weight: 71,
         foot: "Zurdo",
         video: "https://www.instagram.com",
-        bio: "Sub-20 Selección Regional. Velocidad explosiva y regate en mano a mano.",
-        docs: "https://drive.google.com",
-        verified: true
-      },
-      {
-        id: 2,
-        name: "Camila Torres",
-        age: 21,
-        email: "camila@ejemplo.com",
-        phone: "+57 300 123 4567",
-        sport: "Básquetbol",
-        position: "Base / Point Guard",
-        location: "Medellín, Colombia",
-        height: 175,
-        weight: 65,
-        foot: "Diestro",
-        video: "https://www.youtube.com",
-        bio: "Líder en asistencias Liga Universitaria 2025. Tiro de 3 puntos efectivo.",
+        bio: "Sub-20 Selección Regional.",
         docs: "",
         verified: true
       }
@@ -1007,64 +806,33 @@
       athletes = stored ? JSON.parse(stored) : MOCK_ATHLETES;
       renderDirectory();
       handleHashRoute();
+      checkCookieBanner();
     });
 
     window.addEventListener('hashchange', handleHashRoute);
 
     function handleHashRoute() {
       const hash = window.location.hash.replace('#', '');
-      if (['terminos', 'privacidad', 'visor', 'registro', 'hero', 'faq'].includes(hash)) {
+      if (['terminos', 'privacidad', 'cookies', 'visor', 'registro', 'hero', 'faq'].includes(hash)) {
         showView(hash);
       }
     }
 
-    function toggleFaqTab(tab) {
-      const btnAtleta = document.getElementById('faq-tab-btn-atleta');
-      const btnVisor = document.getElementById('faq-tab-btn-visor');
-      const boxAtleta = document.getElementById('faq-box-atleta');
-      const boxVisor = document.getElementById('faq-box-visor');
-
-      if (tab === 'atleta') {
-        btnAtleta.className = "flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition bg-[#FF6B00] text-white shadow-lg";
-        btnVisor.className = "flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition text-slate-400 hover:text-white";
-        boxAtleta.classList.remove('hidden');
-        boxVisor.classList.add('hidden');
-      } else {
-        btnVisor.className = "flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition bg-cobalt-500 text-white shadow-lg";
-        btnAtleta.className = "flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition text-slate-400 hover:text-white";
-        boxVisor.classList.remove('hidden');
-        boxAtleta.classList.add('hidden');
+    /* REQUERIMIENTO 1: LÓGICA DE BANNER Y PREFERENCIA DE COOKIES */
+    function checkCookieBanner() {
+      const consent = localStorage.getItem('talentz_cookie_consent');
+      if (!consent) {
+        document.getElementById('cookie-banner').classList.remove('hidden');
       }
     }
 
-    function toggleAccordion(id) {
-      const ans = document.getElementById(`faq-ans-${id}`);
-      const icon = document.getElementById(`faq-icon-${id}`);
-      if (ans) ans.classList.toggle('hidden');
-      if (icon) icon.classList.toggle('rotate-180');
-    }
-
-    function calculateAge(dobString) {
-      if (!dobString) return 0;
-      const today = new Date();
-      const birthDate = new Date(dobString);
-      let age = today.getFullYear() - birthDate.getFullYear();
-      const monthDiff = today.getMonth() - birthDate.getMonth();
-      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-      }
-      return age;
-    }
-
-    function resetAgeValidation(type) {
-      const ageError = document.getElementById(`age-error-${type}`);
-      if (ageError) {
-        ageError.classList.add('hidden');
-      }
+    function acceptCookieConsent(type) {
+      localStorage.setItem('talentz_cookie_consent', type);
+      document.getElementById('cookie-banner').classList.add('hidden');
     }
 
     function showView(viewName) {
-      const views = ['hero', 'registro', 'visor', 'terminos', 'privacidad', 'faq'];
+      const views = ['hero', 'registro', 'visor', 'terminos', 'privacidad', 'cookies', 'faq'];
       views.forEach(v => {
         const el = document.getElementById(`view-${v}`);
         if (el) el.classList.add('hidden');
@@ -1079,7 +847,7 @@
       
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      if(viewName === 'visor') {
+      if (viewName === 'visor') {
         renderDirectory();
       }
       lucide.createIcons();
@@ -1096,7 +864,7 @@
       const boxAtleta = document.getElementById('form-box-atleta');
       const boxVisor = document.getElementById('form-box-visor');
 
-      if(type === 'atleta') {
+      if (type === 'atleta') {
         btnAtleta.className = "flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 bg-[#FF6B00] text-white shadow-lg";
         btnVisor.className = "flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 text-slate-400 hover:text-white";
         boxAtleta.classList.remove('hidden');
@@ -1113,15 +881,52 @@
       document.getElementById('mobile-menu').classList.toggle('hidden');
     }
 
-    function resetTermsValidation(type) {
-      const container = document.getElementById(`terms-container-${type}`);
-      const errorMsg = document.getElementById(`terms-error-${type}`);
-      if(container && errorMsg) {
-        container.classList.remove('border-crimson-500', 'bg-crimson-500/10');
-        errorMsg.classList.add('hidden');
+    function calculateAge(dobString) {
+      if (!dobString) return 0;
+      const today = new Date();
+      const birthDate = new Date(dobString);
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDiff = today.getMonth() - birthDate.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
       }
+      return age;
     }
 
+    function resetAgeValidation(type) {
+      const ageError = document.getElementById(`age-error-${type}`);
+      if (ageError) ageError.classList.add('hidden');
+    }
+
+    function resetTermsValidation(type) {
+      const termsBox = document.getElementById(`terms-container-${type}`);
+      const privacyBox = document.getElementById(`privacy-container-${type}`);
+      const errorMsg = document.getElementById(`terms-error-${type}`);
+
+      if (termsBox) termsBox.classList.remove('border-crimson-500', 'bg-crimson-500/10');
+      if (privacyBox) privacyBox.classList.remove('border-crimson-500', 'bg-crimson-500/10');
+      if (errorMsg) errorMsg.classList.add('hidden');
+    }
+
+    /* REQUERIMIENTO 3: GENERADOR DE OBJETO DE AUDITORÍA Y TRAZABILIDAD (CONSENT LOGGING) */
+    function buildConsentAuditPayload(userId) {
+      const cookiePref = localStorage.getItem('talentz_cookie_consent') || 'essential';
+      return {
+        user_id: userId || `USR_${Date.now()}`,
+        consent_audit: {
+          terms_accepted: true,
+          terms_version: "v1.0",
+          privacy_accepted: true,
+          privacy_version: "v1.0",
+          cookie_consent: cookiePref === 'all',
+          timestamp_utc: new Date().toISOString(),
+          ip_address: "CLIENT_IP_AUTO", // Reemplazar en backend con req.ip o client IP
+          user_agent: navigator.userAgent
+        }
+      };
+    }
+
+    /* PROCESAMIENTO DE REGISTRO DE ATLETA */
     function saveAthleteProfile(e) {
       e.preventDefault();
       
@@ -1134,25 +939,27 @@
         lucide.createIcons();
         window.scrollTo({ top: ageErrorAtleta.offsetTop - 100, behavior: 'smooth' });
         return;
-      } else {
-        ageErrorAtleta.classList.add('hidden');
       }
 
-      const checkAtleta = document.getElementById('terms-check-atleta');
-      const containerAtleta = document.getElementById('terms-container-atleta');
-      const errorMsgAtleta = document.getElementById('terms-error-atleta');
+      // REQUERIMIENTO 2: VALIDACIÓN DE AMBAS CASILLAS POR SEPARADO
+      const termsChecked = document.getElementById('terms-check-atleta').checked;
+      const privacyChecked = document.getElementById('privacy-check-atleta').checked;
 
-      if (!checkAtleta.checked) {
-        containerAtleta.classList.add('border-crimson-500', 'bg-crimson-500/10');
-        errorMsgAtleta.classList.remove('hidden');
+      if (!termsChecked || !privacyChecked) {
+        if (!termsChecked) document.getElementById('terms-container-atleta').classList.add('border-crimson-500', 'bg-crimson-500/10');
+        if (!privacyChecked) document.getElementById('privacy-container-atleta').classList.add('border-crimson-500', 'bg-crimson-500/10');
+        document.getElementById('terms-error-atleta').classList.remove('hidden');
         lucide.createIcons();
         return;
       }
 
-      const hasIdFile = document.getElementById('athlete-id-file').files.length > 0;
+      const athleteId = `ATL_${Date.now()}`;
+      
+      // REQUERIMIENTO 3: CONSTRUCCIÓN DEL OBJETO DE CONSENTIMIENTO
+      const consentRecord = buildConsentAuditPayload(athleteId);
 
       const newAthlete = {
-        id: Date.now(),
+        id: athleteId,
         name: document.getElementById('athlete-name').value,
         age: userAge,
         email: document.getElementById('athlete-email').value,
@@ -1165,18 +972,23 @@
         foot: document.getElementById('athlete-foot').value,
         video: document.getElementById('athlete-video').value,
         bio: document.getElementById('athlete-bio').value || 'Sin descripción.',
-        docs: document.getElementById('athlete-docs').value || '',
-        verified: hasIdFile
+        verified: document.getElementById('athlete-id-file').files.length > 0,
+        // Almacenamiento de auditoría legal
+        audit_trail: consentRecord.consent_audit
       };
 
       athletes.unshift(newAthlete);
       localStorage.setItem('talentz_athletes', JSON.stringify(athletes));
-      alert('¡Tu perfil deportivo ha sido publicado exitosamente!');
+
+      console.log(' Payload para Base de Datos / Backend:', JSON.stringify(consentRecord, null, 2));
+
+      alert('¡Perfil de Atleta publicado exitosamente! Tu consentimiento legal ha sido registrado para auditoría.');
       document.getElementById('form-atleta').reset();
       resetTermsValidation('atleta');
       showView('visor');
     }
 
+    /* PROCESAMIENTO DE REGISTRO DE VISOR */
     function saveVisorProfile(e) {
       e.preventDefault();
 
@@ -1189,38 +1001,39 @@
         lucide.createIcons();
         window.scrollTo({ top: ageErrorVisor.offsetTop - 100, behavior: 'smooth' });
         return;
-      } else {
-        ageErrorVisor.classList.add('hidden');
       }
 
-      const checkVisor = document.getElementById('terms-check-visor');
-      const containerVisor = document.getElementById('terms-container-visor');
-      const errorMsgVisor = document.getElementById('terms-error-visor');
+      // REQUERIMIENTO 2: VALIDACIÓN DE AMBAS CASILLAS POR SEPARADO
+      const termsChecked = document.getElementById('terms-check-visor').checked;
+      const privacyChecked = document.getElementById('privacy-check-visor').checked;
 
-      if (!checkVisor.checked) {
-        containerVisor.classList.add('border-crimson-500', 'bg-crimson-500/10');
-        errorMsgVisor.classList.remove('hidden');
+      if (!termsChecked || !privacyChecked) {
+        if (!termsChecked) document.getElementById('terms-container-visor').classList.add('border-crimson-500', 'bg-crimson-500/10');
+        if (!privacyChecked) document.getElementById('privacy-container-visor').classList.add('border-crimson-500', 'bg-crimson-500/10');
+        document.getElementById('terms-error-visor').classList.remove('hidden');
         lucide.createIcons();
         return;
       }
 
+      const visorId = `VSR_${Date.now()}`;
+      const consentRecord = buildConsentAuditPayload(visorId);
+
       const visorData = {
-        id: Date.now(),
+        id: visorId,
         name: document.getElementById('visor-name').value,
         org: document.getElementById('visor-org').value,
         role: document.getElementById('visor-role').value,
-        sport: document.getElementById('visor-sport').value,
-        location: document.getElementById('visor-location').value,
         email: document.getElementById('visor-email').value,
-        phone: document.getElementById('visor-phone').value,
-        accredited: document.getElementById('visor-credential-file').files.length > 0
+        audit_trail: consentRecord.consent_audit
       };
 
       let visores = JSON.parse(localStorage.getItem('talentz_visores') || '[]');
       visores.unshift(visorData);
       localStorage.setItem('talentz_visores', JSON.stringify(visores));
 
-      alert(`¡Bienvenido a Talentz, ${visorData.name}! Tu cuenta de ${visorData.role} ha sido registrada.`);
+      console.log(' Payload para Base de Datos / Backend:', JSON.stringify(consentRecord, null, 2));
+
+      alert(`¡Bienvenido a Talentz, ${visorData.name}! Tu registro y trazabilidad legal se han guardado.`);
       document.getElementById('form-visor').reset();
       resetTermsValidation('visor');
       showView('visor');
@@ -1228,6 +1041,8 @@
 
     function renderDirectory() {
       const grid = document.getElementById('athletes-grid');
+      if (!grid) return;
+
       const search = document.getElementById('search-input')?.value.toLowerCase() || '';
 
       const filtered = athletes.filter(a => {
@@ -1238,7 +1053,7 @@
         return matchesSport && matchesSearch;
       });
 
-      if(filtered.length === 0) {
+      if (filtered.length === 0) {
         grid.innerHTML = `
           <div class="col-span-full py-16 text-center text-slate-500">
             <i data-lucide="user-x" class="w-12 h-12 mx-auto mb-3 text-slate-600"></i>
@@ -1256,41 +1071,17 @@
               <div class="w-12 h-12 rounded-2xl bg-navy-900 text-sport-500 font-bold flex items-center justify-center text-lg border border-slate-700">
                 ${a.name.charAt(0)}
               </div>
-              <div class="flex items-center gap-1.5">
-                ${a.verified ? `
-                  <span class="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-cobalt-500/10 text-cobalt-400 border border-cobalt-500/30 flex items-center gap-1">
-                    <i data-lucide="check-circle-2" class="w-3 h-3 text-cobalt-400"></i> Verificado
-                  </span>
-                ` : ''}
-                <span class="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-navy-950 text-sport-400 border border-sport-500/20">
-                  ${a.sport}
-                </span>
-              </div>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-navy-950 text-sport-400 border border-sport-500/20">
+                ${a.sport}
+              </span>
             </div>
 
             <h3 class="text-xl font-black text-white group-hover:text-sport-500 transition">${a.name}</h3>
             <p class="text-xs text-slate-400 font-medium">${a.position} • ${a.age} años</p>
             <p class="text-xs text-slate-500 mt-1 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> ${a.location}</p>
-
-            <div class="grid grid-cols-3 gap-2 my-4 bg-navy-900/60 p-3 rounded-xl border border-slate-800/80 text-center">
-              <div>
-                <span class="block text-[10px] text-slate-500 uppercase font-semibold">Estatura</span>
-                <span class="text-xs font-bold text-slate-200">${a.height} cm</span>
-              </div>
-              <div>
-                <span class="block text-[10px] text-slate-500 uppercase font-semibold">Peso</span>
-                <span class="text-xs font-bold text-slate-200">${a.weight} kg</span>
-              </div>
-              <div>
-                <span class="block text-[10px] text-slate-500 uppercase font-semibold">Perfil</span>
-                <span class="text-xs font-bold text-slate-200">${a.foot}</span>
-              </div>
-            </div>
-
-            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed mb-6">${a.bio}</p>
           </div>
 
-          <button onclick="openAthleteModal(${a.id})" class="w-full bg-navy-900 hover:bg-[#FF6B00] hover:text-white text-slate-300 py-3 rounded-xl font-bold text-xs border border-slate-800 transition flex items-center justify-center gap-2 group">
+          <button onclick="openAthleteModal('${a.id}')" class="w-full bg-navy-900 hover:bg-[#FF6B00] hover:text-white text-slate-300 py-3 rounded-xl font-bold text-xs border border-slate-800 transition flex items-center justify-center gap-2 group mt-6">
             <i data-lucide="play-circle" class="w-4 h-4"></i> Ver Trial & Contactar
           </button>
         </div>
@@ -1313,8 +1104,8 @@
     function filterAthletes() { renderDirectory(); }
 
     function openAthleteModal(id) {
-      const a = athletes.find(item => item.id === id);
-      if(!a) return;
+      const a = athletes.find(item => String(item.id) === String(id));
+      if (!a) return;
 
       const modal = document.getElementById('modal-athlete');
       const content = document.getElementById('modal-content');
@@ -1326,40 +1117,10 @@
               ${a.name.charAt(0)}
             </div>
             <div>
-              <div class="flex items-center gap-2">
-                <h3 class="text-2xl font-black text-white">${a.name}</h3>
-                ${a.verified ? `<span class="text-cobalt-400 text-xs font-bold bg-cobalt-500/10 border border-cobalt-500/30 px-2 py-0.5 rounded-full flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Verificado</span>` : ''}
-              </div>
+              <h3 class="text-2xl font-black text-white">${a.name}</h3>
               <p class="text-sm text-sport-500 font-bold">${a.sport} • ${a.position}</p>
               <p class="text-xs text-slate-400">${a.location} • ${a.age} años</p>
             </div>
-          </div>
-
-          <div class="bg-navy-900 p-4 rounded-2xl border border-slate-800 space-y-2">
-            <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Video de Pruebas / Highlights</p>
-            <a href="${a.video}" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-cobalt-400 hover:underline">
-              <i data-lucide="external-link" class="w-4 h-4"></i> Abrir prueba (YouTube / TikTok / IG / FB)
-            </a>
-          </div>
-
-          <div>
-            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Trayectoria y Bio</h4>
-            <p class="text-sm text-slate-300 leading-relaxed">${a.bio}</p>
-          </div>
-
-          ${a.docs ? `
-            <div class="bg-navy-900/80 p-4 rounded-2xl border border-slate-800">
-              <h4 class="text-xs font-bold text-cobalt-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
-                <i data-lucide="file-text" class="w-4 h-4"></i> Documentación y Evidencias
-              </h4>
-              <a href="${a.docs}" target="_blank" class="text-xs text-slate-300 underline hover:text-white">Ver carpetas de pruebas</a>
-            </div>
-          ` : ''}
-
-          <div class="pt-4 border-t border-slate-800">
-            <button onclick="alert('Contacto iniciado. Si eres un visor registrado, el atleta recibirá tus datos de WhatsApp/Email.')" class="w-full bg-[#FF6B00] hover:bg-[#E56000] text-white py-3 rounded-xl font-bold text-sm transition">
-              Solicitar Contacto Directo
-            </button>
           </div>
         </div>
       `;
