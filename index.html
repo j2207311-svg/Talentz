@@ -229,130 +229,6 @@
         </div>
       </div>
 
-      <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
-      <div class="my-12 max-w-4xl mx-auto border-t border-slate-800/80 pt-12">
-        <div class="text-center mb-8">
-          <span class="text-xs font-bold uppercase tracking-widest text-sport-500">Soporte & Respuestas</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Preguntas Frecuentes</h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1">Resuelve tus dudas sobre cómo Talentz conecta atletas con cazatalentos.</p>
-        </div>
-
-        <!-- Conmutador de Pestañas (Tabs) -->
-        <div class="flex justify-center rounded-2xl bg-navy-900 p-1.5 border border-slate-800 mb-8 max-w-sm mx-auto">
-          <button id="faq-tab-btn-atleta" onclick="toggleFaqTab('atleta')" class="flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition bg-[#FF6B00] text-white shadow-lg">
-            Para Atletas
-          </button>
-          <button id="faq-tab-btn-visor" onclick="toggleFaqTab('visor')" class="flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition text-slate-400 hover:text-white">
-            Para Visores & Coaches
-          </button>
-        </div>
-
-        <!-- Pestaña 1: Para Atletas -->
-        <div id="faq-box-atleta" class="space-y-4 text-left">
-          <!-- Item 1 -->
-          <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-            <button onclick="toggleAccordion('a1')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
-              <span>¿Es realmente 100% gratuito publicar mi perfil?</span>
-              <i data-lucide="chevron-down" id="faq-icon-a1" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-            </button>
-            <div id="faq-ans-a1" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-              Sí, el registro, la creación de ficha técnica, la carga de métricas físicas y la publicación de enlaces de video son 100% gratuitos para todos los deportistas en LATAM.
-            </div>
-          </div>
-
-          <!-- Item 2 -->
-          <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-            <button onclick="toggleAccordion('a2')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
-              <span>¿Qué tipo de videos debo subir para llamar la atención?</span>
-              <i data-lucide="chevron-down" id="faq-icon-a2" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-            </button>
-            <div id="faq-ans-a2" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-              Recomendamos enlaces a tus mejores jugadas (highlights) de YouTube, TikTok o Instagram Reels, así como pruebas físicas breves (tiempos de velocidad, saltos, técnica individual).
-            </div>
-          </div>
-
-          <!-- Item 3 -->
-          <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-            <button onclick="toggleAccordion('a3')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
-              <span>¿Cómo sé si un visor o club está viendo mi perfil?</span>
-              <i data-lucide="chevron-down" id="faq-icon-a3" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-            </button>
-            <div id="faq-ans-a3" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-              Tu panel de atleta te mostrará métricas de visualizaciones en tiempo real e interacciones recibidas por visores y coaches verificados.
-            </div>
-          </div>
-
-          <!-- Item 4 -->
-          <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-            <button onclick="toggleAccordion('a4')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
-              <span>¿Por qué Talentz exige ser mayor de 18 años?</span>
-              <i data-lucide="chevron-down" id="faq-icon-a4" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-            </button>
-            <div id="faq-ans-a4" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-              Cumplimos strictly con las normativas internacionales de protección de datos de menores. Todos los perfiles creados pertenecen a atletas mayores de edad.
-            </div>
-          </div>
-
-          <!-- Item 5 -->
-          <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-            <button onclick="toggleAccordion('a5')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
-              <span>¿Talentz garantiza mi contratación o beca universitaria?</span>
-              <i data-lucide="chevron-down" id="faq-icon-a5" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-            </button>
-            <div id="faq-ans-a5" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-              Talentz es una vitrina digital de conexión directa. No somos una agencia de representación ni garantizamos contratos, pero multiplicamos tu visibilidad ante cazatalentos reales.
-            </div>
-          </div>
-        </div>
-
-        <!-- Pestaña 2: Para Visores & Coaches -->
-        <div id="faq-box-visor" class="hidden space-y-4 text-left">
-          <!-- Item 1 -->
-          <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-            <button onclick="toggleAccordion('v1')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
-              <span>¿Cómo se verifica mi acreditación como visor o reclutador?</span>
-              <i data-lucide="chevron-down" id="faq-icon-v1" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-            </button>
-            <div id="faq-ans-v1" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-              Al registrarte como Visor/Coach, nuestro equipo revisa la vinculación con tu club, academia, universidad o acreditación profesional para otorgarte el sello de perfil verificado.
-            </div>
-          </div>
-
-          <!-- Item 2 -->
-          <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-            <button onclick="toggleAccordion('v2')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
-              <span>¿Qué herramientas tengo para filtrar atletas?</span>
-              <i data-lucide="chevron-down" id="faq-icon-v2" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-            </button>
-            <div id="faq-ans-v2" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-              Puedes filtrar el directorio por posición en cancha, rango de edad, estatura, métricas físicas clave, perfil competitivo y país de origen.
-            </div>
-          </div>
-
-          <!-- Item 3 -->
-          <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-            <button onclick="toggleAccordion('v3')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
-              <span>¿Puedo contactar directamente a los atletas?</span>
-              <i data-lucide="chevron-down" id="faq-icon-v3" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-            </button>
-            <div id="faq-ans-v3" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-              Sí, una vez validada tu acreditación institucional, tendrás acceso a los canales directos de contacto indicados por el deportista en su ficha.
-            </div>
-          </div>
-
-          <!-- Item 4 -->
-          <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
-            <button onclick="toggleAccordion('v4')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
-              <span>¿La información y métricas de los atletas están verificadas?</span>
-              <i data-lucide="chevron-down" id="faq-icon-v4" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
-            </button>
-            <div id="faq-ans-v4" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
-              Promovemos la veracidad mediante la inclusión obligatoria de evidencias en video de sus jugadas y pruebas físicas. La falsificación de datos conlleva la suspensión de la cuenta.
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Banner Métricas -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto pt-6 border-t border-slate-800/80">
         
@@ -880,6 +756,147 @@
 
   </section>
 
+  <!-- VISTA 6: PREGUNTAS FRECUENTES / FAQ DEDICADA (/#faq) -->
+  <section id="view-faq" class="hidden flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+    
+    <!-- Botón de retorno -->
+    <div class="mb-6">
+      <button onclick="showView('hero')" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-400 hover:text-sport-400 transition-colors bg-navy-900/80 px-4 py-2 rounded-xl border border-slate-800">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al Inicio
+      </button>
+    </div>
+
+    <!-- Header de la vista FAQ -->
+    <div class="mb-8 border-b border-slate-800 pb-6 text-center sm:text-left">
+      <span class="text-xs font-bold uppercase tracking-widest text-sport-500">Soporte & Respuestas</span>
+      <h1 class="text-3xl sm:text-4xl font-black text-white mt-1">Preguntas Frecuentes (FAQ)</h1>
+      <p class="text-slate-400 text-xs sm:text-sm mt-2">Resuelve tus dudas sobre cómo Talentz conecta atletas con cazatalentos.</p>
+    </div>
+
+    <!-- Conmutador de Pestañas (Tabs) -->
+    <div class="flex justify-center rounded-2xl bg-navy-900 p-1.5 border border-slate-800 mb-8 max-w-sm mx-auto">
+      <button id="faq-tab-btn-atleta" onclick="toggleFaqTab('atleta')" class="flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition bg-[#FF6B00] text-white shadow-lg">
+        Para Atletas
+      </button>
+      <button id="faq-tab-btn-visor" onclick="toggleFaqTab('visor')" class="flex-1 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition text-slate-400 hover:text-white">
+        Para Visores & Coaches
+      </button>
+    </div>
+
+    <!-- Pestaña 1: Para Atletas -->
+    <div id="faq-box-atleta" class="space-y-4 text-left">
+      <!-- Item 1 -->
+      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+        <button onclick="toggleAccordion('a1')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
+          <span>¿Es realmente 100% gratuito publicar mi perfil?</span>
+          <i data-lucide="chevron-down" id="faq-icon-a1" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+        </button>
+        <div id="faq-ans-a1" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+          Sí, el registro, la creación de ficha técnica, la carga de métricas físicas y la publicación de enlaces de video son 100% gratuitos para todos los deportistas en LATAM.
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+        <button onclick="toggleAccordion('a2')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
+          <span>¿Qué tipo de videos debo subir para llamar la atención?</span>
+          <i data-lucide="chevron-down" id="faq-icon-a2" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+        </button>
+        <div id="faq-ans-a2" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+          Recomendamos enlaces a tus mejores jugadas (highlights) de YouTube, TikTok o Instagram Reels, así como pruebas físicas breves (tiempos de velocidad, saltos, técnica individual).
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+        <button onclick="toggleAccordion('a3')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
+          <span>¿Cómo sé si un visor o club está viendo mi perfil?</span>
+          <i data-lucide="chevron-down" id="faq-icon-a3" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+        </button>
+        <div id="faq-ans-a3" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+          Tu panel de atleta te mostrará métricas de visualizaciones en tiempo real e interacciones recibidas por visores y coaches verificados.
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+        <button onclick="toggleAccordion('a4')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
+          <span>¿Por qué Talentz exige ser mayor de 18 años?</span>
+          <i data-lucide="chevron-down" id="faq-icon-a4" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+        </button>
+        <div id="faq-ans-a4" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+          Cumplimos estrictamente con las normativas internacionales de protección de datos de menores. Todos los perfiles creados pertenecen a atletas mayores de edad.
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+        <button onclick="toggleAccordion('a5')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-sport-400 transition-colors">
+          <span>¿Talentz garantiza mi contratación o beca universitaria?</span>
+          <i data-lucide="chevron-down" id="faq-icon-a5" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+        </button>
+        <div id="faq-ans-a5" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+          Talentz es una vitrina digital de conexión directa. No somos una agencia de representación ni garantizamos contratos, pero multiplicamos tu visibilidad ante cazatalentos reales.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pestaña 2: Para Visores & Coaches -->
+    <div id="faq-box-visor" class="hidden space-y-4 text-left">
+      <!-- Item 1 -->
+      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+        <button onclick="toggleAccordion('v1')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
+          <span>¿Cómo se verifica mi acreditación como visor o reclutador?</span>
+          <i data-lucide="chevron-down" id="faq-icon-v1" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+        </button>
+        <div id="faq-ans-v1" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+          Al registrarte como Visor/Coach, nuestro equipo revisa la vinculación con tu club, academia, universidad o acreditación profesional para otorgarte el sello de perfil verificado.
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+        <button onclick="toggleAccordion('v2')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
+          <span>¿Qué herramientas tengo para filtrar atletas?</span>
+          <i data-lucide="chevron-down" id="faq-icon-v2" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+        </button>
+        <div id="faq-ans-v2" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+          Puedes filtrar el directorio por posición en cancha, rango de edad, estatura, métricas físicas clave, perfil competitivo y país de origen.
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+        <button onclick="toggleAccordion('v3')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
+          <span>¿Puedo contactar directamente a los atletas?</span>
+          <i data-lucide="chevron-down" id="faq-icon-v3" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+        </button>
+        <div id="faq-ans-v3" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+          Sí, una vez validada tu acreditación institucional, tendrás acceso a los canales directos de contacto indicados por el deportista en su ficha.
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden transition-all">
+        <button onclick="toggleAccordion('v4')" class="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base hover:text-cobalt-400 transition-colors">
+          <span>¿La información y métricas de los atletas están verificadas?</span>
+          <i data-lucide="chevron-down" id="faq-icon-v4" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+        </button>
+        <div id="faq-ans-v4" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+          Promovemos la veracidad mediante la inclusión obligatoria de evidencias en video de sus jugadas y pruebas físicas. La falsificación de datos conlleva la suspensión de la cuenta.
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón inferior para volver -->
+    <div class="mt-8 text-center">
+      <button onclick="showView('hero')" class="bg-[#FF6B00] hover:bg-[#E56000] text-white font-bold px-8 py-3 rounded-xl transition shadow-lg shadow-sport-500/20">
+        Entendido, volver al Inicio
+      </button>
+    </div>
+
+  </section>
+
   <!-- MODAL ATLETA -->
   <div id="modal-athlete" class="hidden fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
     <div class="glass-card max-w-2xl w-full rounded-3xl border border-slate-800 overflow-hidden relative max-h-[90vh] overflow-y-auto">
@@ -899,6 +916,7 @@
         <div class="flex gap-4 font-medium text-slate-400">
           <button onclick="showView('terminos')" class="hover:text-sport-400 transition-colors cursor-pointer">Términos</button>
           <button onclick="showView('privacidad')" class="hover:text-sport-400 transition-colors cursor-pointer">Privacidad</button>
+          <button onclick="showView('faq')" class="hover:text-sport-400 transition-colors cursor-pointer">Preguntas Frecuentes</button>
           <a href="#" onclick="showRegistrationTab('visor'); return false;" class="hover:text-sport-400 transition-colors">Soporte Visores</a>
         </div>
 
@@ -974,7 +992,7 @@
 
     function handleHashRoute() {
       const hash = window.location.hash.replace('#', '');
-      if (['terminos', 'privacidad', 'visor', 'registro', 'hero'].includes(hash)) {
+      if (['terminos', 'privacidad', 'visor', 'registro', 'hero', 'faq'].includes(hash)) {
         showView(hash);
       }
     }
@@ -1025,7 +1043,7 @@
     }
 
     function showView(viewName) {
-      const views = ['hero', 'registro', 'visor', 'terminos', 'privacidad'];
+      const views = ['hero', 'registro', 'visor', 'terminos', 'privacidad', 'faq'];
       views.forEach(v => {
         const el = document.getElementById(`view-${v}`);
         if (el) el.classList.add('hidden');
