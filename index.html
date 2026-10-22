@@ -15,6 +15,7 @@
         extend: {
           colors: {
             brand: { 500: '#10b981', 600: '#059669', 400: '#34d399' },
+            volt: { 400: '#a3e635', 500: '#84cc16' },
             accent: { 500: '#06b6d4', 600: '#0891b2' }
           }
         }
@@ -23,27 +24,30 @@
   </script>
   <style>
     .glass-card {
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(12px);
+      background: rgba(11, 19, 41, 0.85);
+      backdrop-filter: blur(14px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .glow-emerald {
-      box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.3);
+      box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.25);
+    }
+    .glow-volt {
+      box-shadow: 0 0 30px -5px rgba(163, 230, 53, 0.2);
     }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-brand-500 selection:text-slate-950">
 
   <!-- NAVBAR -->
-  <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
+  <header class="border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
       <!-- Logo -->
       <div onclick="showView('hero')" class="cursor-pointer flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-accent-500 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 via-volt-400 to-accent-500 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
           T
         </div>
         <div class="flex flex-col">
-          <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
+          <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-emerald-400 via-volt-400 to-cyan-400 bg-clip-text text-transparent">
             TALENTZ
           </span>
           <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400 -mt-1">LATAM SPORTS</span>
@@ -54,7 +58,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
         <button onclick="showView('hero')" class="text-slate-300 hover:text-brand-400 transition">Inicio</button>
         <button onclick="showView('visor')" class="text-slate-300 hover:text-brand-400 transition flex items-center gap-1.5">
-          <i data-lucide="search" class="w-4 h-4 text-accent-500"></i> Buscar Atletas
+          <i data-lucide="binoculars" class="w-4 h-4 text-accent-500"></i> Buscar Atletas
         </button>
         <button onclick="showRegistrationTab('atleta')" class="bg-brand-500 hover:bg-brand-400 text-slate-950 px-5 py-2.5 rounded-xl font-bold transition shadow-lg shadow-brand-500/20 hover:scale-105 active:scale-95 flex items-center gap-2">
           <i data-lucide="user-plus" class="w-4 h-4"></i> Registrarse
@@ -85,12 +89,12 @@
       
       <!-- Badge -->
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-brand-500/30 mb-8 text-xs font-bold tracking-wide text-brand-400">
-        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+        <span class="w-2 h-2 rounded-full bg-volt-400 animate-pulse"></span>
         PLATAFORMA LÍDER DE VISORÍAS DIGITALES EN LATAM
       </div>
 
       <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
-        Tu vitrina al <span class="bg-gradient-to-r from-brand-400 via-teal-300 to-accent-500 bg-clip-text text-transparent">deporte profesional</span>.
+        Tu vitrina al <span class="bg-gradient-to-r from-brand-400 via-volt-400 to-accent-500 bg-clip-text text-transparent">deporte profesional</span>.
       </h1>
 
       <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-12 font-normal leading-relaxed">
@@ -116,10 +120,10 @@
           </div>
         </div>
 
-        <!-- Tarjeta Visor -->
-        <div onclick="showRegistrationTab('visor')" class="glass-card hover:border-accent-500/50 transition-all duration-300 p-8 rounded-3xl cursor-pointer group hover:-translate-y-1">
+        <!-- Tarjeta Visor (Con Ícono de BINOCULARES) -->
+        <div onclick="showRegistrationTab('visor')" class="glass-card hover:border-accent-500/50 transition-all duration-300 p-8 rounded-3xl cursor-pointer group hover:-translate-y-1 glow-volt">
           <div class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 text-accent-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <i data-lucide="user-check" class="w-7 h-7"></i>
+            <i data-lucide="binoculars" class="w-7 h-7"></i>
           </div>
           <span class="text-xs font-bold text-accent-400 uppercase tracking-wider">Para Cazatalentos & Coaches</span>
           <h2 class="text-2xl font-black text-white mt-1 mb-3">Soy Visor / Coach</h2>
@@ -165,7 +169,7 @@
         <i data-lucide="trophy" class="w-4 h-4"></i> Soy Atleta (+18)
       </button>
       <button id="tab-btn-visor" onclick="toggleRegTab('visor')" class="flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 text-slate-400 hover:text-white">
-        <i data-lucide="user-check" class="w-4 h-4"></i> Soy Visor / Coach
+        <i data-lucide="binoculars" class="w-4 h-4"></i> Soy Visor / Coach
       </button>
     </div>
 
@@ -189,7 +193,6 @@
           </div>
         </div>
 
-        <!-- Contacto Atleta -->
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Correo Electrónico *</label>
