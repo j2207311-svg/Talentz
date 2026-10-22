@@ -14,9 +14,10 @@
       theme: {
         extend: {
           colors: {
-            brand: { 500: '#10b981', 600: '#059669', 400: '#34d399' },
-            volt: { 400: '#a3e635', 500: '#84cc16' },
-            accent: { 500: '#06b6d4', 600: '#0891b2' }
+            sport: { 500: '#FF6B00', 600: '#E05D00', 400: '#FF8533' },
+            crimson: { 500: '#E63946', 600: '#D62828' },
+            cobalt: { 500: '#2563EB', 600: '#1D4ED8', 400: '#60A5FA' },
+            navy: { 950: '#0B132B', 900: '#0F172A', 800: '#1E293B' }
           }
         }
       }
@@ -24,30 +25,30 @@
   </script>
   <style>
     .glass-card {
-      background: rgba(11, 19, 41, 0.85);
+      background: rgba(30, 41, 59, 0.85);
       backdrop-filter: blur(14px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .glow-emerald {
-      box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.25);
+    .glow-orange {
+      box-shadow: 0 0 35px -5px rgba(255, 107, 0, 0.25);
     }
-    .glow-volt {
-      box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.25);
+    .glow-cobalt {
+      box-shadow: 0 0 35px -5px rgba(37, 99, 235, 0.25);
     }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-brand-500 selection:text-slate-950">
+<body class="bg-navy-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-sport-500 selection:text-white">
 
   <!-- NAVBAR -->
-  <header class="border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md sticky top-0 z-50">
+  <header class="border-b border-slate-800/80 bg-navy-950/90 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
       <!-- Logo -->
       <div onclick="showView('hero')" class="cursor-pointer flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 via-volt-400 to-accent-500 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sport-500 via-crimson-500 to-cobalt-500 flex items-center justify-center font-black text-white text-xl shadow-lg shadow-sport-500/20 group-hover:scale-105 transition-transform">
           T
         </div>
         <div class="flex flex-col">
-          <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-emerald-400 via-volt-400 to-cyan-400 bg-clip-text text-transparent">
+          <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-sport-500 via-orange-400 to-cobalt-400 bg-clip-text text-transparent">
             TALENTZ
           </span>
           <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400 -mt-1">LATAM SPORTS</span>
@@ -56,10 +57,10 @@
 
       <!-- Nav Links -->
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <button onclick="showView('hero')" class="text-slate-300 hover:text-brand-400 transition">Inicio</button>
-        <button onclick="showView('visor')" class="text-slate-300 hover:text-brand-400 transition flex items-center gap-2">
-          <!-- Binoculares de frente SVG -->
-          <svg class="w-4 h-4 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <button onclick="showView('hero')" class="text-slate-300 hover:text-sport-400 transition">Inicio</button>
+        <button onclick="showView('visor')" class="text-slate-300 hover:text-cobalt-400 transition flex items-center gap-2">
+          <!-- Binoculares Frontales SVG -->
+          <svg class="w-4 h-4 text-cobalt-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="7" cy="15" r="3.5"></circle>
             <circle cx="17" cy="15" r="3.5"></circle>
             <path d="M10.5 15h3"></path>
@@ -69,7 +70,7 @@
           </svg>
           Buscar Atletas
         </button>
-        <button onclick="showRegistrationTab('atleta')" class="bg-brand-500 hover:bg-brand-400 text-slate-950 px-5 py-2.5 rounded-xl font-bold transition shadow-lg shadow-brand-500/20 hover:scale-105 active:scale-95 flex items-center gap-2">
+        <button onclick="showRegistrationTab('atleta')" class="bg-sport-500 hover:bg-sport-600 text-white px-5 py-2.5 rounded-xl font-bold transition shadow-lg shadow-sport-500/20 hover:scale-105 active:scale-95 flex items-center gap-2">
           <i data-lucide="user-plus" class="w-4 h-4"></i> Registrarse
         </button>
       </nav>
@@ -81,32 +82,33 @@
     </div>
 
     <!-- Mobile Nav Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-900/95 px-4 py-4 space-y-3">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-navy-900/95 px-4 py-4 space-y-3">
       <button onclick="showView('hero'); toggleMobileMenu();" class="block w-full text-left py-2 font-medium text-slate-300">Inicio</button>
       <button onclick="showView('visor'); toggleMobileMenu();" class="block w-full text-left py-2 font-medium text-slate-300">Explorar Atletas</button>
-      <button onclick="showRegistrationTab('atleta'); toggleMobileMenu();" class="w-full bg-brand-500 text-slate-950 py-3 rounded-xl font-bold text-center">Registrar Atleta (+18)</button>
-      <button onclick="showRegistrationTab('visor'); toggleMobileMenu();" class="w-full bg-slate-800 text-accent-400 py-3 rounded-xl font-bold text-center border border-accent-500/30">Registrar Visor / Coach</button>
+      <button onclick="showRegistrationTab('atleta'); toggleMobileMenu();" class="w-full bg-sport-500 text-white py-3 rounded-xl font-bold text-center">Registrar Atleta (+18)</button>
+      <button onclick="showRegistrationTab('visor'); toggleMobileMenu();" class="w-full bg-navy-800 text-cobalt-400 py-3 rounded-xl font-bold text-center border border-cobalt-500/30">Registrar Visor / Coach</button>
     </div>
   </header>
 
   <!-- VISTA 1: HERO / LANDING -->
   <section id="view-hero" class="flex-1 flex flex-col justify-center relative overflow-hidden py-12 lg:py-20">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_50%)]"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.15),transparent_50%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,107,0,0.12),transparent_50%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.12),transparent_50%)]"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
       <!-- Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-brand-500/30 mb-8 text-xs font-bold tracking-wide text-brand-400">
-        <span class="w-2 h-2 rounded-full bg-volt-400 animate-pulse"></span>
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-sport-500/30 mb-8 text-xs font-bold tracking-wide text-sport-400">
+        <span class="w-2 h-2 rounded-full bg-sport-500 animate-pulse"></span>
         PLATAFORMA LÍDER DE VISORÍAS DIGITALES EN LATAM
       </div>
 
+      <!-- Titular con Colores Deportivos de Alto Impacto -->
       <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
-        Tu vitrina al <span class="bg-gradient-to-r from-brand-400 via-volt-400 to-accent-500 bg-clip-text text-transparent">deporte profesional</span>.
+        Tu vitrina al <span class="text-sport-500">deporte</span> <span class="text-cobalt-400">profesional</span>.
       </h1>
 
-      <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-12 font-normal leading-relaxed">
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-12 font-normal leading-relaxed">
         Conecta directamente con cazatalentos, clubes profesionales y becas universitarias.
         <span class="block mt-3 text-slate-400">Sube tus métricas clave, historial competitivo y videos de pruebas.</span>
       </p>
@@ -115,24 +117,24 @@
       <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16 text-left">
         
         <!-- Tarjeta Atleta -->
-        <div onclick="showRegistrationTab('atleta')" class="glass-card hover:border-brand-500/50 transition-all duration-300 p-8 rounded-3xl cursor-pointer group hover:-translate-y-1 glow-emerald">
-          <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 text-brand-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <div onclick="showRegistrationTab('atleta')" class="glass-card hover:border-sport-500/50 transition-all duration-300 p-8 rounded-3xl cursor-pointer group hover:-translate-y-1 glow-orange">
+          <div class="w-14 h-14 rounded-2xl bg-sport-500/10 border border-sport-500/20 text-sport-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="trophy" class="w-7 h-7"></i>
           </div>
-          <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">Para Deportistas +18</span>
+          <span class="text-xs font-bold text-sport-500 uppercase tracking-wider">Para Deportistas +18</span>
           <h2 class="text-2xl font-black text-white mt-1 mb-3">Soy Atleta</h2>
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
             Muestra tu potencial. Publica tus estadísticas físicas, posición en cancha y tus mejores jugadas en video.
           </p>
-          <div class="flex items-center gap-2 font-bold text-brand-400 text-sm group-hover:translate-x-2 transition-transform">
+          <div class="flex items-center gap-2 font-bold text-sport-500 text-sm group-hover:translate-x-2 transition-transform">
             Registrar mi perfil <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </div>
         </div>
 
-        <!-- Tarjeta Visor (BINOCULARES FRONTALES DE ALTA DEFINICIÓN) -->
-        <div onclick="showRegistrationTab('visor')" class="glass-card hover:border-accent-500/50 transition-all duration-300 p-8 rounded-3xl cursor-pointer group hover:-translate-y-1 glow-volt">
-          <div class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 text-accent-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Tarjeta Visor (Azul Cobalto + Binoculares Frontales) -->
+        <div onclick="showRegistrationTab('visor')" class="glass-card hover:border-cobalt-500/50 transition-all duration-300 p-8 rounded-3xl cursor-pointer group hover:-translate-y-1 glow-cobalt">
+          <div class="w-14 h-14 rounded-2xl bg-cobalt-500/10 border border-cobalt-500/20 text-cobalt-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-cobalt-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="7" cy="15" r="3.5"></circle>
               <circle cx="17" cy="15" r="3.5"></circle>
               <path d="M10.5 15h3"></path>
@@ -141,26 +143,26 @@
               <path d="M9 7.5h6"></path>
             </svg>
           </div>
-          <span class="text-xs font-bold text-accent-400 uppercase tracking-wider">Para Cazatalentos & Coaches</span>
+          <span class="text-xs font-bold text-cobalt-400 uppercase tracking-wider">Para Cazatalentos & Coaches</span>
           <h2 class="text-2xl font-black text-white mt-1 mb-3">Soy Visor / Coach</h2>
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
             Crea tu perfil institucional, valida tu acreditación y accede al directorio de prospectos calificados.
           </p>
-          <div class="flex items-center gap-2 font-bold text-accent-400 text-sm group-hover:translate-x-2 transition-transform">
+          <div class="flex items-center gap-2 font-bold text-cobalt-400 text-sm group-hover:translate-x-2 transition-transform">
             Explorar prospectos <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </div>
         </div>
 
       </div>
 
-      <!-- Propuestas de Valor Beta -->
+      <!-- Banner Métricas Renovado -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80">
         <div>
-          <p class="text-xl font-black text-brand-400">100% Gratuito</p>
+          <p class="text-xl font-black text-sport-500">100% Gratuito</p>
           <p class="text-xs text-slate-400 uppercase font-semibold mt-1">Para Atletas LATAM</p>
         </div>
         <div>
-          <p class="text-xl font-black text-accent-400">Directo & Sin Filtros</p>
+          <p class="text-xl font-black text-cobalt-400">Directo & Sin Filtros</p>
           <p class="text-xs text-slate-400 uppercase font-semibold mt-1">Contacto Visor-Atleta</p>
         </div>
         <div>
@@ -168,7 +170,7 @@
           <p class="text-xs text-slate-400 uppercase font-semibold mt-1">YouTube / TikTok / IG</p>
         </div>
         <div>
-          <p class="text-xl font-black text-emerald-400">Comunidad +18</p>
+          <p class="text-xl font-black text-crimson-500">Comunidad +18</p>
           <p class="text-xs text-slate-400 uppercase font-semibold mt-1">Perfil Verificado</p>
         </div>
       </div>
@@ -180,8 +182,8 @@
   <section id="view-registro" class="hidden flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
     
     <!-- Selector de Pestaña -->
-    <div class="flex rounded-2xl bg-slate-900 p-1.5 border border-slate-800 mb-8 max-w-md mx-auto">
-      <button id="tab-btn-atleta" onclick="toggleRegTab('atleta')" class="flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 bg-brand-500 text-slate-950">
+    <div class="flex rounded-2xl bg-navy-900 p-1.5 border border-slate-800 mb-8 max-w-md mx-auto">
+      <button id="tab-btn-atleta" onclick="toggleRegTab('atleta')" class="flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 bg-sport-500 text-white shadow-lg">
         <i data-lucide="trophy" class="w-4 h-4"></i> Soy Atleta (+18)
       </button>
       <button id="tab-btn-visor" onclick="toggleRegTab('visor')" class="flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 text-slate-400 hover:text-white">
@@ -200,7 +202,7 @@
     <!-- FORMULARIO 1: ATLETA -->
     <div id="form-box-atleta" class="glass-card p-8 sm:p-10 rounded-3xl border border-slate-800">
       <div class="mb-8 border-b border-slate-800 pb-6">
-        <span class="text-xs font-bold uppercase tracking-widest text-brand-400">Registro Oficial</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-sport-500">Registro Oficial</span>
         <h2 class="text-3xl font-black text-white mt-1">Perfil de Atleta (+18)</h2>
         <p class="text-slate-400 text-sm mt-1">Ingresa tus datos reales para ser evaluado por cazatalentos y reclutadores.</p>
       </div>
@@ -209,29 +211,29 @@
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nombre Completo *</label>
-            <input type="text" id="athlete-name" required placeholder="Ej. Carlos Mendoza" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="text" id="athlete-name" required placeholder="Ej. Carlos Mendoza" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Edad (Mínimo 18 años) *</label>
-            <input type="number" id="athlete-age" min="18" max="45" required placeholder="19" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="number" id="athlete-age" min="18" max="45" required placeholder="19" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
         </div>
 
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Correo Electrónico *</label>
-            <input type="email" id="athlete-email" required placeholder="atleta@ejemplo.com" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="email" id="athlete-email" required placeholder="atleta@ejemplo.com" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Teléfono / WhatsApp *</label>
-            <input type="tel" id="athlete-phone" required placeholder="+52 55 1234 5678" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="tel" id="athlete-phone" required placeholder="+52 55 1234 5678" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
         </div>
 
         <div class="grid sm:grid-cols-3 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Deporte *</label>
-            <select id="athlete-sport" required class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <select id="athlete-sport" required class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
               <option value="">Selecciona...</option>
               <option value="Fútbol">Fútbol</option>
               <option value="Básquetbol">Básquetbol</option>
@@ -243,26 +245,26 @@
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Posición Principal *</label>
-            <input type="text" id="athlete-position" required placeholder="Ej. Delantero Centro / Base" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="text" id="athlete-position" required placeholder="Ej. Delantero Centro / Base" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Ciudad, País *</label>
-            <input type="text" id="athlete-location" required placeholder="Ej. Guadalajara, México" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="text" id="athlete-location" required placeholder="Ej. Guadalajara, México" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
         </div>
 
-        <div class="grid sm:grid-cols-3 gap-6 bg-slate-900/50 p-4 rounded-2xl border border-slate-800">
+        <div class="grid sm:grid-cols-3 gap-6 bg-navy-900/50 p-4 rounded-2xl border border-slate-800">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Estatura (cm)</label>
-            <input type="number" id="athlete-height" placeholder="182" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-3 py-2 text-white text-sm outline-none">
+            <input type="number" id="athlete-height" placeholder="182" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-3 py-2 text-white text-sm outline-none">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Peso (kg)</label>
-            <input type="number" id="athlete-weight" placeholder="75" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-3 py-2 text-white text-sm outline-none">
+            <input type="number" id="athlete-weight" placeholder="75" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-3 py-2 text-white text-sm outline-none">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Perfil / Perfil Hábil</label>
-            <select id="athlete-foot" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-3 py-2 text-white text-sm outline-none">
+            <select id="athlete-foot" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-3 py-2 text-white text-sm outline-none">
               <option value="Diestro">Diestro / Derecho</option>
               <option value="Zurdo">Zurdo / Izquierdo</option>
               <option value="Ambidiestro">Ambidiestro</option>
@@ -274,41 +276,41 @@
           <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
             Enlace de Video de Pruebas (YouTube / TikTok / Instagram / Facebook) *
           </label>
-          <input type="url" id="athlete-video" required placeholder="https://www.instagram.com/reel/... o https://www.youtube.com/watch?v=..." class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+          <input type="url" id="athlete-video" required placeholder="https://www.instagram.com/reel/... o https://www.youtube.com/watch?v=..." class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
         </div>
 
         <div>
           <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Trayectoria y Logros Principales</label>
-          <textarea id="athlete-bio" rows="3" placeholder="Menciona tus equipos anteriores, ligas disputadas, campeonatos, reconocimientos o marcas personales..." class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition"></textarea>
+          <textarea id="athlete-bio" rows="3" placeholder="Menciona tus equipos anteriores, ligas disputadas, campeonatos, reconocimientos o marcas personales..." class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition"></textarea>
         </div>
 
-        <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800 space-y-3">
-          <div class="flex items-center gap-2 text-accent-400 font-bold text-xs uppercase tracking-wider">
+        <div class="bg-navy-900/60 p-5 rounded-2xl border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 text-cobalt-400 font-bold text-xs uppercase tracking-wider">
             <i data-lucide="file-check" class="w-4 h-4"></i> Respaldos y Documentación Oficial (Opcional)
           </div>
-          <input type="url" id="athlete-docs" placeholder="https://drive.google.com/drive/folders/..." class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-2.5 text-white text-sm outline-none transition">
+          <input type="url" id="athlete-docs" placeholder="https://drive.google.com/drive/folders/..." class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-2.5 text-white text-sm outline-none transition">
         </div>
 
-        <div class="bg-brand-500/5 p-5 rounded-2xl border border-brand-500/20 space-y-4">
+        <div class="bg-sport-500/5 p-5 rounded-2xl border border-sport-500/20 space-y-4">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2 text-brand-400 font-bold text-xs uppercase tracking-wider">
+            <div class="flex items-center gap-2 text-sport-400 font-bold text-xs uppercase tracking-wider">
               <i data-lucide="shield-check" class="w-4 h-4"></i> Solicitud de Insignia "Perfil Verificado ✔️"
             </div>
-            <span class="text-[10px] bg-brand-500/20 text-brand-400 px-2.5 py-0.5 rounded-full font-bold">RECOMENDADO</span>
+            <span class="text-[10px] bg-sport-500/20 text-sport-400 px-2.5 py-0.5 rounded-full font-bold">RECOMENDADO</span>
           </div>
           <div>
-            <input type="file" id="athlete-id-file" accept="image/*,.pdf" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-slate-800 file:text-brand-400 cursor-pointer">
+            <input type="file" id="athlete-id-file" accept="image/*,.pdf" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-navy-800 file:text-sport-400 cursor-pointer">
           </div>
         </div>
 
-        <div class="flex items-start gap-3 bg-slate-900 p-4 rounded-xl border border-slate-800">
-          <input type="checkbox" id="age-check" required class="mt-1 accent-brand-500 w-4 h-4">
+        <div class="flex items-start gap-3 bg-navy-900 p-4 rounded-xl border border-slate-800">
+          <input type="checkbox" id="age-check" required class="mt-1 accent-sport-500 w-4 h-4">
           <label for="age-check" class="text-xs text-slate-300 leading-snug">
             Confirmo bajo protesta de decir verdad que soy mayor de 18 años y autorizo a Talentz a mostrar mi perfil deportivo.
           </label>
         </div>
 
-        <button type="submit" class="w-full bg-brand-500 hover:bg-brand-400 text-slate-950 py-4 rounded-xl font-black text-base transition shadow-xl shadow-brand-500/20">
+        <button type="submit" class="w-full bg-sport-500 hover:bg-sport-600 text-white py-4 rounded-xl font-black text-base transition shadow-xl shadow-sport-500/20">
           Publicar Perfil Deportivo Verificado
         </button>
       </form>
@@ -317,7 +319,7 @@
     <!-- FORMULARIO 2: VISOR / COACH -->
     <div id="form-box-visor" class="hidden glass-card p-8 sm:p-10 rounded-3xl border border-slate-800">
       <div class="mb-8 border-b border-slate-800 pb-6">
-        <span class="text-xs font-bold uppercase tracking-widest text-accent-400">Registro Profesional</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-cobalt-400">Registro Profesional</span>
         <h2 class="text-3xl font-black text-white mt-1">Perfil de Visor / Coach / Reclutador</h2>
         <p class="text-slate-400 text-sm mt-1">Acredita tu rol institucional para contactar prospectos calificados en LATAM.</p>
       </div>
@@ -326,18 +328,18 @@
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nombre Completo *</label>
-            <input type="text" id="visor-name" required placeholder="Ej. Lic. Roberto Gómez" class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="text" id="visor-name" required placeholder="Ej. Lic. Roberto Gómez" class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Club / Universidad / Organización *</label>
-            <input type="text" id="visor-org" required placeholder="Ej. Club Deportivo / Universidad A&M" class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="text" id="visor-org" required placeholder="Ej. Club Deportivo / Universidad A&M" class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
         </div>
 
         <div class="grid sm:grid-cols-3 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Cargo / Rol *</label>
-            <select id="visor-role" required class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <select id="visor-role" required class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
               <option value="">Selecciona...</option>
               <option value="Visor Oficial">Cazatalentos / Visor Oficial</option>
               <option value="Coach Principal">Director Técnico / Coach</option>
@@ -347,7 +349,7 @@
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Deporte *</label>
-            <select id="visor-sport" required class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <select id="visor-sport" required class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
               <option value="Multideporte">Todos / Multideporte</option>
               <option value="Fútbol">Fútbol</option>
               <option value="Básquetbol">Básquetbol</option>
@@ -358,31 +360,31 @@
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Ciudad, País *</label>
-            <input type="text" id="visor-location" required placeholder="Ej. Buenos Aires, Argentina" class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="text" id="visor-location" required placeholder="Ej. Buenos Aires, Argentina" class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
         </div>
 
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Correo Electrónico *</label>
-            <input type="email" id="visor-email" required placeholder="scout@club.com" class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="email" id="visor-email" required placeholder="scout@club.com" class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Teléfono / WhatsApp *</label>
-            <input type="tel" id="visor-phone" required placeholder="+52 55 1234 5678" class="w-full bg-slate-900 border border-slate-700 focus:border-accent-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <input type="tel" id="visor-phone" required placeholder="+52 55 1234 5678" class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
         </div>
 
         <!-- Acreditación Profesional -->
-        <div class="bg-accent-500/10 p-5 rounded-2xl border border-accent-500/20 space-y-3">
-          <div class="flex items-center gap-2 text-accent-400 font-bold text-xs uppercase tracking-wider">
+        <div class="bg-cobalt-500/10 p-5 rounded-2xl border border-cobalt-500/20 space-y-3">
+          <div class="flex items-center gap-2 text-cobalt-400 font-bold text-xs uppercase tracking-wider">
             <i data-lucide="award" class="w-4 h-4"></i> Acreditación Profesional (Insignia "Visor Acreditado ✔️")
           </div>
           <p class="text-xs text-slate-300">Carga tu carnet de DT, identificación del club o tarjeta de presentación para certificar tu cuenta ante los atletas.</p>
-          <input type="file" id="visor-credential-file" accept="image/*,.pdf" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-slate-800 file:text-accent-400 cursor-pointer">
+          <input type="file" id="visor-credential-file" accept="image/*,.pdf" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-navy-800 file:text-cobalt-400 cursor-pointer">
         </div>
 
-        <button type="submit" class="w-full bg-accent-500 hover:bg-accent-400 text-slate-950 py-4 rounded-xl font-black text-base transition shadow-xl shadow-accent-500/20">
+        <button type="submit" class="w-full bg-cobalt-500 hover:bg-cobalt-600 text-white py-4 rounded-xl font-black text-base transition shadow-xl shadow-cobalt-500/20">
           Registrar Cuenta de Visor Acreditado
         </button>
       </form>
@@ -393,20 +395,20 @@
   <!-- VISTA 3: BUSCADOR DE VISORES / DIRECTORIO -->
   <section id="view-visor" class="hidden flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
     <div class="mb-10 text-center max-w-3xl mx-auto">
-      <span class="text-xs font-bold uppercase tracking-widest text-accent-400">Directorio de Prospectos</span>
+      <span class="text-xs font-bold uppercase tracking-widest text-cobalt-400">Directorio de Prospectos</span>
       <h2 class="text-3xl sm:text-4xl font-black text-white mt-1 mb-4">Descubre Talento Deportivo LATAM</h2>
       
       <div class="relative mt-6">
         <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-        <input type="text" id="search-input" onkeyup="filterAthletes()" placeholder="Buscar por nombre, posición o ciudad..." class="w-full bg-slate-900/90 border border-slate-700 focus:border-accent-500 rounded-2xl pl-12 pr-4 py-4 text-white text-sm outline-none transition shadow-2xl">
+        <input type="text" id="search-input" onkeyup="filterAthletes()" placeholder="Buscar por nombre, posición o ciudad..." class="w-full bg-navy-900/90 border border-slate-700 focus:border-cobalt-500 rounded-2xl pl-12 pr-4 py-4 text-white text-sm outline-none transition shadow-2xl">
       </div>
 
       <div class="flex flex-wrap items-center justify-center gap-2 mt-4" id="sport-filters">
-        <button onclick="setSportFilter('Todos')" class="filter-btn active bg-accent-500 text-slate-950 px-4 py-1.5 rounded-full text-xs font-bold transition">Todos</button>
-        <button onclick="setSportFilter('Fútbol')" class="filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Fútbol</button>
-        <button onclick="setSportFilter('Básquetbol')" class="filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Básquetbol</button>
-        <button onclick="setSportFilter('Voleibol')" class="filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Voleibol</button>
-        <button onclick="setSportFilter('Béisbol')" class="filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Béisbol</button>
+        <button onclick="setSportFilter('Todos')" class="filter-btn active bg-cobalt-500 text-white px-4 py-1.5 rounded-full text-xs font-bold transition">Todos</button>
+        <button onclick="setSportFilter('Fútbol')" class="filter-btn bg-navy-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Fútbol</button>
+        <button onclick="setSportFilter('Básquetbol')" class="filter-btn bg-navy-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Básquetbol</button>
+        <button onclick="setSportFilter('Voleibol')" class="filter-btn bg-navy-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Voleibol</button>
+        <button onclick="setSportFilter('Béisbol')" class="filter-btn bg-navy-900 hover:bg-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-800 transition">Béisbol</button>
       </div>
     </div>
 
@@ -414,9 +416,9 @@
   </section>
 
   <!-- MODAL ATLETA -->
-  <div id="modal-athlete" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+  <div id="modal-athlete" class="hidden fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
     <div class="glass-card max-w-2xl w-full rounded-3xl border border-slate-800 overflow-hidden relative max-h-[90vh] overflow-y-auto">
-      <button onclick="closeModal()" class="absolute top-4 right-4 p-2 rounded-full bg-slate-900 text-slate-400 hover:text-white z-10">
+      <button onclick="closeModal()" class="absolute top-4 right-4 p-2 rounded-full bg-navy-900 text-slate-400 hover:text-white z-10">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
       <div class="p-8" id="modal-content"></div>
@@ -424,13 +426,13 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500 bg-slate-950">
+  <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500 bg-navy-950">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
       <p>© 2026 TALENTZ SPORTS. Todos los derechos reservados. Exclusivo mayores de 18 años.</p>
       <div class="flex gap-4 font-medium text-slate-400">
-        <a href="#" class="hover:text-brand-400">Términos</a>
-        <a href="#" class="hover:text-brand-400">Privacidad</a>
-        <a href="#" class="hover:text-brand-400">Soporte Visores</a>
+        <a href="#" class="hover:text-sport-400">Términos</a>
+        <a href="#" class="hover:text-sport-400">Privacidad</a>
+        <a href="#" class="hover:text-sport-400">Soporte Visores</a>
       </div>
     </div>
   </footer>
@@ -509,12 +511,12 @@
       const boxVisor = document.getElementById('form-box-visor');
 
       if(type === 'atleta') {
-        btnAtleta.className = "flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 bg-brand-500 text-slate-950";
+        btnAtleta.className = "flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 bg-sport-500 text-white shadow-lg";
         btnVisor.className = "flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 text-slate-400 hover:text-white";
         boxAtleta.classList.remove('hidden');
         boxVisor.classList.add('hidden');
       } else {
-        btnVisor.className = "flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 bg-accent-500 text-slate-950";
+        btnVisor.className = "flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 bg-cobalt-500 text-white shadow-lg";
         btnAtleta.className = "flex-1 py-3 rounded-xl font-bold text-xs transition flex items-center justify-center gap-2 text-slate-400 hover:text-white";
         boxVisor.classList.remove('hidden');
         boxAtleta.classList.add('hidden');
@@ -601,29 +603,29 @@
       }
 
       grid.innerHTML = filtered.map(a => `
-        <div class="glass-card p-6 rounded-3xl border border-slate-800 hover:border-brand-500/40 transition flex flex-col justify-between group">
+        <div class="glass-card p-6 rounded-3xl border border-slate-800 hover:border-sport-500/40 transition flex flex-col justify-between group">
           <div>
             <div class="flex items-start justify-between mb-4">
-              <div class="w-12 h-12 rounded-2xl bg-slate-800 text-brand-400 font-bold flex items-center justify-center text-lg border border-slate-700">
+              <div class="w-12 h-12 rounded-2xl bg-navy-900 text-sport-500 font-bold flex items-center justify-center text-lg border border-slate-700">
                 ${a.name.charAt(0)}
               </div>
               <div class="flex items-center gap-1.5">
                 ${a.verified ? `
-                  <span class="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
-                    <i data-lucide="check-circle-2" class="w-3 h-3 text-emerald-400"></i> Verificado
+                  <span class="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-cobalt-500/10 text-cobalt-400 border border-cobalt-500/30 flex items-center gap-1">
+                    <i data-lucide="check-circle-2" class="w-3 h-3 text-cobalt-400"></i> Verificado
                   </span>
                 ` : ''}
-                <span class="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-900 text-brand-400 border border-brand-500/20">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-navy-950 text-sport-400 border border-sport-500/20">
                   ${a.sport}
                 </span>
               </div>
             </div>
 
-            <h3 class="text-xl font-black text-white group-hover:text-brand-400 transition">${a.name}</h3>
+            <h3 class="text-xl font-black text-white group-hover:text-sport-500 transition">${a.name}</h3>
             <p class="text-xs text-slate-400 font-medium">${a.position} • ${a.age} años</p>
             <p class="text-xs text-slate-500 mt-1 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> ${a.location}</p>
 
-            <div class="grid grid-cols-3 gap-2 my-4 bg-slate-900/60 p-3 rounded-xl border border-slate-800/80 text-center">
+            <div class="grid grid-cols-3 gap-2 my-4 bg-navy-900/60 p-3 rounded-xl border border-slate-800/80 text-center">
               <div>
                 <span class="block text-[10px] text-slate-500 uppercase font-semibold">Estatura</span>
                 <span class="text-xs font-bold text-slate-200">${a.height} cm</span>
@@ -641,7 +643,7 @@
             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed mb-6">${a.bio}</p>
           </div>
 
-          <button onclick="openAthleteModal(${a.id})" class="w-full bg-slate-900 hover:bg-brand-500 hover:text-slate-950 text-slate-300 py-3 rounded-xl font-bold text-xs border border-slate-800 transition flex items-center justify-center gap-2">
+          <button onclick="openAthleteModal(${a.id})" class="w-full bg-navy-900 hover:bg-sport-500 hover:text-white text-slate-300 py-3 rounded-xl font-bold text-xs border border-slate-800 transition flex items-center justify-center gap-2">
             <i data-lucide="play-circle" class="w-4 h-4"></i> Ver Trial & Contactar
           </button>
         </div>
@@ -653,11 +655,11 @@
     function setSportFilter(sport) {
       currentSportFilter = sport;
       document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('bg-accent-500', 'text-slate-950');
-        btn.classList.add('bg-slate-900', 'text-slate-300');
+        btn.classList.remove('bg-cobalt-500', 'text-white');
+        btn.classList.add('bg-navy-900', 'text-slate-300');
       });
-      event.target.classList.remove('bg-slate-900', 'text-slate-300');
-      event.target.classList.add('bg-accent-500', 'text-slate-950');
+      event.target.classList.remove('bg-navy-900', 'text-slate-300');
+      event.target.classList.add('bg-cobalt-500', 'text-white');
       renderDirectory();
     }
 
@@ -673,22 +675,22 @@
       content.innerHTML = `
         <div class="space-y-6">
           <div class="flex items-center gap-4">
-            <div class="w-16 h-16 rounded-2xl bg-brand-500/10 text-brand-400 font-black text-2xl flex items-center justify-center border border-brand-500/30">
+            <div class="w-16 h-16 rounded-2xl bg-sport-500/10 text-sport-500 font-black text-2xl flex items-center justify-center border border-sport-500/30">
               ${a.name.charAt(0)}
             </div>
             <div>
               <div class="flex items-center gap-2">
                 <h3 class="text-2xl font-black text-white">${a.name}</h3>
-                ${a.verified ? `<span class="text-emerald-400 text-xs font-bold bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Verificado</span>` : ''}
+                ${a.verified ? `<span class="text-cobalt-400 text-xs font-bold bg-cobalt-500/10 border border-cobalt-500/30 px-2 py-0.5 rounded-full flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Verificado</span>` : ''}
               </div>
-              <p class="text-sm text-brand-400 font-bold">${a.sport} • ${a.position}</p>
+              <p class="text-sm text-sport-500 font-bold">${a.sport} • ${a.position}</p>
               <p class="text-xs text-slate-400">${a.location} • ${a.age} años</p>
             </div>
           </div>
 
-          <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 space-y-2">
+          <div class="bg-navy-900 p-4 rounded-2xl border border-slate-800 space-y-2">
             <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Video de Pruebas / Highlights</p>
-            <a href="${a.video}" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-accent-400 hover:underline">
+            <a href="${a.video}" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-cobalt-400 hover:underline">
               <i data-lucide="external-link" class="w-4 h-4"></i> Abrir prueba (YouTube / TikTok / IG / FB)
             </a>
           </div>
@@ -699,8 +701,8 @@
           </div>
 
           ${a.docs ? `
-            <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
-              <h4 class="text-xs font-bold text-accent-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+            <div class="bg-navy-900/80 p-4 rounded-2xl border border-slate-800">
+              <h4 class="text-xs font-bold text-cobalt-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
                 <i data-lucide="file-text" class="w-4 h-4"></i> Documentación y Evidencias
               </h4>
               <a href="${a.docs}" target="_blank" class="text-xs text-slate-300 underline hover:text-white">Ver carpetas de pruebas</a>
@@ -708,7 +710,7 @@
           ` : ''}
 
           <div class="pt-4 border-t border-slate-800">
-            <button onclick="alert('Contacto iniciado. Si eres un visor registrado, el atleta recibirá tus datos de WhatsApp/Email.')" class="w-full bg-brand-500 hover:bg-brand-400 text-slate-950 py-3 rounded-xl font-bold text-sm transition">
+            <button onclick="alert('Contacto iniciado. Si eres un visor registrado, el atleta recibirá tus datos de WhatsApp/Email.')" class="w-full bg-sport-500 hover:bg-sport-600 text-white py-3 rounded-xl font-bold text-sm transition">
               Solicitar Contacto Directo
             </button>
           </div>
