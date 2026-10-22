@@ -349,7 +349,7 @@
           <div id="terms-container-atleta" class="flex items-start gap-3 bg-navy-900 p-4 rounded-xl border border-slate-800 transition-all duration-200">
             <input type="checkbox" id="terms-check-atleta" required onchange="resetTermsValidation('atleta')" class="mt-1 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
             <label for="terms-check-atleta" class="text-xs text-slate-400 leading-relaxed cursor-pointer select-none">
-              He leído y acepto los <a href="/terminos" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Términos y Condiciones</a> y la <a href="/privacidad" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
+              He leído y acepto los <a href="/#terminos" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Términos y Condiciones</a> y la <a href="/#privacidad" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
             </label>
           </div>
           <p id="terms-error-atleta" class="hidden text-xs text-crimson-500 font-bold mt-2 flex items-center gap-1.5">
@@ -436,7 +436,7 @@
           <div id="terms-container-visor" class="flex items-start gap-3 bg-navy-900 p-4 rounded-xl border border-slate-800 transition-all duration-200">
             <input type="checkbox" id="terms-check-visor" required onchange="resetTermsValidation('visor')" class="mt-1 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
             <label for="terms-check-visor" class="text-xs text-slate-400 leading-relaxed cursor-pointer select-none">
-              He leído y acepto los <a href="/terminos" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Términos y Condiciones</a> y la <a href="/privacidad" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
+              He leído y acepto los <a href="/#terminos" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Términos y Condiciones</a> y la <a href="/#privacidad" target="_blank" rel="noopener noreferrer" class="text-[#3B82F6] font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
             </label>
           </div>
           <p id="terms-error-visor" class="hidden text-xs text-crimson-500 font-bold mt-2 flex items-center gap-1.5">
@@ -475,7 +475,7 @@
     <div id="athletes-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </section>
 
-  <!-- VISTA 4: TÉRMINOS Y CONDICIONES DE USO (/terminos) -->
+  <!-- VISTA 4: TÉRMINOS Y CONDICIONES DE USO (/#terminos) -->
   <section id="view-terminos" class="hidden flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
     
     <!-- Botón de retorno -->
@@ -525,7 +525,7 @@
           3. Elegibilidad y Mayoría de Edad (+18)
         </h2>
         <p>
-          El registro para la creación de perfiles públicos de atleta está strictly reservado a personas que hayan cumplido los <strong>18 años de edad</strong> al momento de completar la solicitud. Al enviar el formulario de registro de Atleta, declaras bajo protesta de decir verdad que cuentas con la mayoría de edad legal aplicable en tu país de residencia. Talentz se reserva el derecho de solicitar documentación comprobatoria oficial en cualquier momento para validar el cumplimiento de este requisito.
+          El registro para la creación de perfiles públicos de atleta está estrictamente reservado a personas que hayan cumplido los <strong>18 años de edad</strong> al momento de completar la solicitud. Al enviar el formulario de registro de Atleta, declaras bajo protesta de decir verdad que cuentas con la mayoría de edad legal aplicable en tu país de residencia. Talentz se reserva el derecho de solicitar documentación comprobatoria oficial en cualquier momento para validar el cumplimiento de este requisito.
         </p>
       </section>
 
@@ -593,6 +593,82 @@
 
   </section>
 
+  <!-- VISTA 5: POLÍTICA DE PRIVACIDAD (/#privacidad) -->
+  <section id="view-privacidad" class="hidden flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+    
+    <!-- Botón de retorno -->
+    <div class="mb-6">
+      <button onclick="showView('hero')" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-400 hover:text-sport-400 transition-colors bg-navy-900/80 px-4 py-2 rounded-xl border border-slate-800">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al Inicio
+      </button>
+    </div>
+
+    <!-- Header de la sección legal -->
+    <div class="mb-8 border-b border-slate-800 pb-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-sport-500">Aviso Legal & Protección de Datos</span>
+      <h1 class="text-3xl sm:text-4xl font-black text-white mt-1">Política de Privacidad</h1>
+      <p class="text-slate-400 text-xs sm:text-sm mt-2">Última actualización: Octubre de 2026. Transparencia y protección total en el tratamiento de tus datos personales.</p>
+    </div>
+
+    <!-- Tarjeta Contenedor Legal (#1E293B) -->
+    <div class="glass-card p-6 sm:p-10 rounded-2xl border border-slate-800 shadow-xl space-y-8 text-slate-300 text-sm sm:text-base leading-relaxed">
+      
+      <!-- Cláusula 1 -->
+      <section>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
+          1. Datos Recolectados
+        </h2>
+        <p class="mb-3">
+          Para prestar nuestros servicios de vitrina e intermediación digital deportiva, Talentz LATAM Sports recaba la siguiente información personal al momento de tu registro voluntario:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-slate-300">
+          <li><strong>Datos de Identificación y Contacto:</strong> Nombre completo, correo electrónico, número de teléfono/WhatsApp y ciudad/país de residencia.</li>
+          <li><strong>Métricas Físicas y Deportivas:</strong> Edad (mínimo 18 años), disciplina deportiva, posición en cancha, estatura, peso y perfil hábil.</li>
+          <li><strong>Material Audiovisual y Evidencias:</strong> Enlaces a videos de pruebas (YouTube, TikTok, Instagram, Facebook), trayectoria competitiva y documentos oficiales de respaldo.</li>
+        </ul>
+      </section>
+
+      <!-- Cláusula 2 -->
+      <section>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
+          2. Uso Exclusivo de los Datos
+        </h2>
+        <p>
+          Los datos recabados son utilizados <strong>exclusivamente</strong> para construir y exhibir tu perfil deportivo dentro del directorio oficial de Talentz, permitiendo que visores, cazatalentos, coaches y reclutadores universitarios registrados y acreditados puedan evaluar tu rendimiento y contactarte para oportunidades deportivas legítimas.
+        </p>
+      </section>
+
+      <!-- Cláusula 3 -->
+      <section>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
+          3. Compromiso de No Venta a Terceros
+        </h2>
+        <div class="bg-navy-900/90 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm text-slate-300 space-y-2">
+          <p><strong class="text-white">Garantía Privacidad Total:</strong> Talentz LATAM Sports NO vende, alquila, comercializa ni cede la información personal o archivos de sus usuarios a empresas de publicidad, brokers de datos ni a terceros ajenos a la red de reclutamiento deportivo.</p>
+        </div>
+      </section>
+
+      <!-- Cláusula 4 -->
+      <section>
+        <h2 class="text-lg sm:text-xl font-bold text-sport-500 mb-2.5 flex items-center gap-2">
+          4. Derechos del Usuario (Derechos ARCO)
+        </h2>
+        <p>
+          Tienes derecho en todo momento a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos personales. Si deseas actualizar tus métricas, cambiar tus videos o solicitar la eliminación definitiva de tu perfil y archivos audiovisuales de nuestros servidores, puedes enviar un mensaje a nuestro equipo de soporte. Tu solicitud de borrado se procesará en un plazo máximo de 5 días hábiles.
+        </p>
+      </section>
+
+    </div>
+
+    <!-- Botón inferior para volver -->
+    <div class="mt-8 text-center">
+      <button onclick="showView('hero')" class="bg-[#FF6B00] hover:bg-[#E56000] text-white font-bold px-8 py-3 rounded-xl transition shadow-lg shadow-sport-500/20">
+        Entendido, volver al Inicio
+      </button>
+    </div>
+
+  </section>
+
   <!-- MODAL ATLETA -->
   <div id="modal-athlete" class="hidden fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
     <div class="glass-card max-w-2xl w-full rounded-3xl border border-slate-800 overflow-hidden relative max-h-[90vh] overflow-y-auto">
@@ -611,7 +687,7 @@
       <div class="flex flex-wrap items-center justify-center gap-6">
         <div class="flex gap-4 font-medium text-slate-400">
           <button onclick="showView('terminos')" class="hover:text-sport-400 transition-colors cursor-pointer">Términos</button>
-          <a href="#" onclick="showView('terminos'); return false;" class="hover:text-sport-400 transition-colors">Privacidad</a>
+          <button onclick="showView('privacidad')" class="hover:text-sport-400 transition-colors cursor-pointer">Privacidad</button>
           <a href="#" onclick="showRegistrationTab('visor'); return false;" class="hover:text-sport-400 transition-colors">Soporte Visores</a>
         </div>
 
@@ -680,15 +756,32 @@
       const stored = localStorage.getItem('talentz_athletes');
       athletes = stored ? JSON.parse(stored) : MOCK_ATHLETES;
       renderDirectory();
+      handleHashRoute();
     });
 
-    function showView(viewName) {
-      document.getElementById('view-hero').classList.add('hidden');
-      document.getElementById('view-registro').classList.add('hidden');
-      document.getElementById('view-visor').classList.add('hidden');
-      document.getElementById('view-terminos').classList.add('hidden');
+    window.addEventListener('hashchange', handleHashRoute);
 
-      document.getElementById(`view-${viewName}`).classList.remove('hidden');
+    function handleHashRoute() {
+      const hash = window.location.hash.replace('#', '');
+      if (['terminos', 'privacidad', 'visor', 'registro', 'hero'].includes(hash)) {
+        showView(hash);
+      }
+    }
+
+    function showView(viewName) {
+      const views = ['hero', 'registro', 'visor', 'terminos', 'privacidad'];
+      views.forEach(v => {
+        const el = document.getElementById(`view-${v}`);
+        if (el) el.classList.add('hidden');
+      });
+
+      const target = document.getElementById(`view-${viewName}`);
+      if (target) {
+        target.classList.remove('hidden');
+      } else {
+        document.getElementById('view-hero').classList.remove('hidden');
+      }
+      
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
       if(viewName === 'visor') {
