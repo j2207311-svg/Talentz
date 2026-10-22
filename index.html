@@ -28,6 +28,10 @@
       background: rgba(30, 41, 59, 0.85);
       backdrop-filter: blur(14px);
     }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(0.8);
+      cursor: pointer;
+    }
   </style>
 </head>
 <body class="bg-navy-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-sport-500 selection:text-white">
@@ -249,14 +253,25 @@
       </div>
 
       <form id="form-atleta" onsubmit="saveAthleteProfile(event)" class="space-y-6">
+        
+        <!-- BANNER DE ERROR DE EDAD (ATLETA) -->
+        <div id="age-error-atleta" class="hidden bg-crimson-500/10 border border-crimson-500/40 p-4 rounded-2xl flex items-start gap-3 text-slate-200 text-xs sm:text-sm">
+          <i data-lucide="shield-alert" class="w-5 h-5 text-crimson-500 shrink-0 mt-0.5"></i>
+          <div>
+            <strong class="block text-crimson-400 font-bold mb-0.5">Acceso Denegado (Menor de 18 años)</strong>
+            Lo sentimos. Por regulaciones de protección de datos y políticas de la plataforma, Talentz es una comunidad exclusiva para mayores de 18 años.
+          </div>
+        </div>
+
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nombre Completo *</label>
             <input type="text" id="athlete-name" required placeholder="Ej. Carlos Mendoza" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Edad (Mínimo 18 años) *</label>
-            <input type="number" id="athlete-age" min="18" max="45" required placeholder="19" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Fecha de Nacimiento *</label>
+            <input type="date" id="athlete-dob" required onchange="resetAgeValidation('atleta')" class="w-full bg-navy-900 border border-slate-700 focus:border-sport-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition [color-scheme:dark]">
+            <p class="text-[11px] text-slate-400 mt-1">Debes ser mayor de 18 años para crear una cuenta en Talentz.</p>
           </div>
         </div>
 
@@ -372,18 +387,33 @@
       </div>
 
       <form id="form-visor" onsubmit="saveVisorProfile(event)" class="space-y-6">
+
+        <!-- BANNER DE ERROR DE EDAD (VISOR) -->
+        <div id="age-error-visor" class="hidden bg-crimson-500/10 border border-crimson-500/40 p-4 rounded-2xl flex items-start gap-3 text-slate-200 text-xs sm:text-sm">
+          <i data-lucide="shield-alert" class="w-5 h-5 text-crimson-500 shrink-0 mt-0.5"></i>
+          <div>
+            <strong class="block text-crimson-400 font-bold mb-0.5">Acceso Denegado (Menor de 18 años)</strong>
+            Lo sentimos. Por regulaciones de protección de datos y políticas de la plataforma, Talentz es una comunidad exclusiva para mayores de 18 años.
+          </div>
+        </div>
+
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nombre Completo *</label>
             <input type="text" id="visor-name" required placeholder="Ej. Lic. Roberto Gómez" class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
           </div>
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Club / Universidad / Organización *</label>
-            <input type="text" id="visor-org" required placeholder="Ej. Club Deportivo / Universidad A&M" class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Fecha de Nacimiento *</label>
+            <input type="date" id="visor-dob" required onchange="resetAgeValidation('visor')" class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition [color-scheme:dark]">
+            <p class="text-[11px] text-slate-400 mt-1">Debes ser mayor de 18 años para crear una cuenta en Talentz.</p>
           </div>
         </div>
 
-        <div class="grid sm:grid-cols-3 gap-6">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Club / Universidad / Organización *</label>
+            <input type="text" id="visor-org" required placeholder="Ej. Club Deportivo / Universidad A&M" class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
+          </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Cargo / Rol *</label>
             <select id="visor-role" required class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
@@ -394,6 +424,9 @@
               <option value="Agente">Agente / Representante</option>
             </select>
           </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Deporte *</label>
             <select id="visor-sport" required class="w-full bg-navy-900 border border-slate-700 focus:border-cobalt-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition">
@@ -622,7 +655,7 @@
           Para prestar nuestros servicios de vitrina e intermediación digital deportiva, Talentz LATAM Sports recaba la siguiente información personal al momento de tu registro voluntario:
         </p>
         <ul class="list-disc list-inside space-y-2 text-slate-300">
-          <li><strong>Datos de Identificación y Contacto:</strong> Nombre completo, correo electrónico, número de teléfono/WhatsApp y ciudad/país de residencia.</li>
+          <li><strong>Datos de Identificación y Contacto:</strong> Nombre completo, fecha de nacimiento, correo electrónico, número de teléfono/WhatsApp y ciudad/país de residencia.</li>
           <li><strong>Métricas Físicas y Deportivas:</strong> Edad (mínimo 18 años), disciplina deportiva, posición en cancha, estatura, peso y perfil hábil.</li>
           <li><strong>Material Audiovisual y Evidencias:</strong> Enlaces a videos de pruebas (YouTube, TikTok, Instagram, Facebook), trayectoria competitiva y documentos oficiales de respaldo.</li>
         </ul>
@@ -768,6 +801,25 @@
       }
     }
 
+    function calculateAge(dobString) {
+      if (!dobString) return 0;
+      const today = new Date();
+      const birthDate = new Date(dobString);
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDiff = today.getMonth() - birthDate.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    }
+
+    function resetAgeValidation(type) {
+      const ageError = document.getElementById(`age-error-${type}`);
+      if (ageError) {
+        ageError.classList.add('hidden');
+      }
+    }
+
     function showView(viewName) {
       const views = ['hero', 'registro', 'visor', 'terminos', 'privacidad'];
       views.forEach(v => {
@@ -829,6 +881,19 @@
     function saveAthleteProfile(e) {
       e.preventDefault();
       
+      const dobVal = document.getElementById('athlete-dob').value;
+      const userAge = calculateAge(dobVal);
+      const ageErrorAtleta = document.getElementById('age-error-atleta');
+
+      if (userAge < 18) {
+        ageErrorAtleta.classList.remove('hidden');
+        lucide.createIcons();
+        window.scrollTo({ top: ageErrorAtleta.offsetTop - 100, behavior: 'smooth' });
+        return;
+      } else {
+        ageErrorAtleta.classList.add('hidden');
+      }
+
       const checkAtleta = document.getElementById('terms-check-atleta');
       const containerAtleta = document.getElementById('terms-container-atleta');
       const errorMsgAtleta = document.getElementById('terms-error-atleta');
@@ -845,7 +910,7 @@
       const newAthlete = {
         id: Date.now(),
         name: document.getElementById('athlete-name').value,
-        age: parseInt(document.getElementById('athlete-age').value),
+        age: userAge,
         email: document.getElementById('athlete-email').value,
         phone: document.getElementById('athlete-phone').value,
         sport: document.getElementById('athlete-sport').value,
@@ -870,6 +935,19 @@
 
     function saveVisorProfile(e) {
       e.preventDefault();
+
+      const dobVal = document.getElementById('visor-dob').value;
+      const userAge = calculateAge(dobVal);
+      const ageErrorVisor = document.getElementById('age-error-visor');
+
+      if (userAge < 18) {
+        ageErrorVisor.classList.remove('hidden');
+        lucide.createIcons();
+        window.scrollTo({ top: ageErrorVisor.offsetTop - 100, behavior: 'smooth' });
+        return;
+      } else {
+        ageErrorVisor.classList.add('hidden');
+      }
 
       const checkVisor = document.getElementById('terms-check-visor');
       const containerVisor = document.getElementById('terms-container-visor');
