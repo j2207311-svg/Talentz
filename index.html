@@ -344,11 +344,17 @@
           </div>
         </div>
 
-        <div class="flex items-start gap-3 bg-navy-900 p-4 rounded-xl border border-slate-800">
-          <input type="checkbox" id="age-check" required class="mt-1 accent-sport-500 w-4 h-4">
-          <label for="age-check" class="text-xs text-slate-300 leading-snug">
-            Confirmo bajo protesta de decir verdad que soy mayor de 18 años y autorizo a Talentz a mostrar mi perfil deportivo.
-          </label>
+        <!-- CHECKBOX DE TÉRMINOS Y EDAD (ATLETA) -->
+        <div>
+          <div id="terms-container-atleta" class="flex items-start gap-3 bg-navy-900 p-4 rounded-xl border border-slate-800 transition-all duration-200">
+            <input type="checkbox" id="terms-check-atleta" required onchange="resetTermsValidation('atleta')" class="mt-1 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
+            <label for="terms-check-atleta" class="text-xs text-slate-400 leading-relaxed cursor-pointer select-none">
+              He leído y acepto los <a href="#terminos" onclick="openTermsTab(); return false;" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:underline">Términos y Condiciones</a> y la <a href="#terminos" onclick="openTermsTab(); return false;" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
+            </label>
+          </div>
+          <p id="terms-error-atleta" class="hidden text-xs text-crimson-500 font-bold mt-2 flex items-center gap-1.5">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i> Debes aceptar los términos y confirmar tu edad para continuar.
+          </p>
         </div>
 
         <button type="submit" class="w-full bg-[#FF6B00] hover:bg-[#E56000] text-white py-4 rounded-xl font-bold text-base transition shadow-xl shadow-sport-500/20">
@@ -423,6 +429,19 @@
           </div>
           <p class="text-xs text-slate-300">Carga tu carnet de DT, identificación del club o tarjeta de presentación para certificar tu cuenta ante los atletas.</p>
           <input type="file" id="visor-credential-file" accept="image/*,.pdf" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-navy-800 file:text-cobalt-400 cursor-pointer">
+        </div>
+
+        <!-- CHECKBOX DE TÉRMINOS Y EDAD (VISOR) -->
+        <div>
+          <div id="terms-container-visor" class="flex items-start gap-3 bg-navy-900 p-4 rounded-xl border border-slate-800 transition-all duration-200">
+            <input type="checkbox" id="terms-check-visor" required onchange="resetTermsValidation('visor')" class="mt-1 accent-[#FF6B00] w-4 h-4 rounded cursor-pointer shrink-0">
+            <label for="terms-check-visor" class="text-xs text-slate-400 leading-relaxed cursor-pointer select-none">
+              He leído y acepto los <a href="#terminos" onclick="openTermsTab(); return false;" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:underline">Términos y Condiciones</a> y la <a href="#terminos" onclick="openTermsTab(); return false;" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:underline">Política de Privacidad</a>. Confirmo que tengo 18 años o más.
+            </label>
+          </div>
+          <p id="terms-error-visor" class="hidden text-xs text-crimson-500 font-bold mt-2 flex items-center gap-1.5">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i> Debes aceptar los términos y confirmar tu edad para continuar.
+          </p>
         </div>
 
         <button type="submit" class="w-full bg-cobalt-500 hover:bg-cobalt-600 text-white py-4 rounded-xl font-bold text-base transition shadow-xl shadow-cobalt-500/20">
@@ -559,7 +578,7 @@
           8. Jurisdicción y Ley Aplicable
         </h2>
         <p>
-          Estos Términos y Condiciones se rigen por los principios generales del comercio electrónico y servicios de la sociedad de la información aplicables en América Latina. En caso de discrepancia o controversia relacionada con el servicio, las partes acuerdan privilegiar la resolución amistosa y la conciliación directa antes de acudir a instancias judiciales.
+          Estos Términos y Condiciones se rigen por los principios generales del comercio electrónico y servicios de la sociedad de la información aplicables en América Latina. En caso de discrepancy o controversia relacionada con el servicio, las partes acuerdan privilegiar la resolución amistosa y la conciliación directa antes de acudir a instancias judiciales.
         </p>
       </section>
 
@@ -584,20 +603,18 @@
     </div>
   </div>
 
-  <!-- FOOTER CON ENLACE DE TÉRMINOS DEBIDAMENTE CONECTADO -->
+  <!-- FOOTER -->
   <footer class="border-t border-slate-800/80 py-8 text-xs text-slate-500 bg-navy-950">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
       <p>© 2026 TALENTZ SPORTS. Todos los derechos reservados. Exclusivo mayores de 18 años.</p>
       
       <div class="flex flex-wrap items-center justify-center gap-6">
-        <!-- Links de Navegación Footer con llamado a showView('terminos') -->
         <div class="flex gap-4 font-medium text-slate-400">
           <button onclick="showView('terminos')" class="hover:text-sport-400 transition-colors cursor-pointer">Términos</button>
           <a href="#" onclick="showView('terminos'); return false;" class="hover:text-sport-400 transition-colors">Privacidad</a>
           <a href="#" onclick="showRegistrationTab('visor'); return false;" class="hover:text-sport-400 transition-colors">Soporte Visores</a>
         </div>
 
-        <!-- Íconos de Redes Sociales Vectoriales -->
         <div class="flex items-center gap-3 border-t md:border-t-0 md:border-l border-slate-800 pt-3 md:pt-0 md:pl-6 text-slate-400">
           <a href="https://tiktok.com" target="_blank" rel="noopener" class="hover:text-[#FF6B00] transition-colors p-1" title="TikTok Talentz">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-2.22V8.2a6.34 6.34 0 0 0-5.11 6.18A6.34 6.34 0 0 0 10.7 20.7a6.34 6.34 0 0 0 6.33-6.33V8.87a8.28 8.28 0 0 0 4.81 1.56V6.98a4.85 4.85 0 0 1-2.25-.29z"/></svg>
@@ -684,6 +701,11 @@
       toggleRegTab(tabType);
     }
 
+    function openTermsTab() {
+      // Abre la vista legal sin perder los datos que el usuario ha llenado
+      window.open(window.location.pathname + '#terminos', '_blank');
+    }
+
     function toggleRegTab(type) {
       const btnAtleta = document.getElementById('tab-btn-atleta');
       const btnVisor = document.getElementById('tab-btn-visor');
@@ -707,8 +729,29 @@
       document.getElementById('mobile-menu').classList.toggle('hidden');
     }
 
+    function resetTermsValidation(type) {
+      const container = document.getElementById(`terms-container-${type}`);
+      const errorMsg = document.getElementById(`terms-error-${type}`);
+      if(container && errorMsg) {
+        container.classList.remove('border-crimson-500', 'bg-crimson-500/10');
+        errorMsg.classList.add('hidden');
+      }
+    }
+
     function saveAthleteProfile(e) {
       e.preventDefault();
+      
+      const checkAtleta = document.getElementById('terms-check-atleta');
+      const containerAtleta = document.getElementById('terms-container-atleta');
+      const errorMsgAtleta = document.getElementById('terms-error-atleta');
+
+      if (!checkAtleta.checked) {
+        containerAtleta.classList.add('border-crimson-500', 'bg-crimson-500/10');
+        errorMsgAtleta.classList.remove('hidden');
+        lucide.createIcons();
+        return;
+      }
+
       const hasIdFile = document.getElementById('athlete-id-file').files.length > 0;
 
       const newAthlete = {
@@ -733,11 +776,24 @@
       localStorage.setItem('talentz_athletes', JSON.stringify(athletes));
       alert('¡Tu perfil deportivo ha sido publicado exitosamente!');
       document.getElementById('form-atleta').reset();
+      resetTermsValidation('atleta');
       showView('visor');
     }
 
     function saveVisorProfile(e) {
       e.preventDefault();
+
+      const checkVisor = document.getElementById('terms-check-visor');
+      const containerVisor = document.getElementById('terms-container-visor');
+      const errorMsgVisor = document.getElementById('terms-error-visor');
+
+      if (!checkVisor.checked) {
+        containerVisor.classList.add('border-crimson-500', 'bg-crimson-500/10');
+        errorMsgVisor.classList.remove('hidden');
+        lucide.createIcons();
+        return;
+      }
+
       const visorData = {
         id: Date.now(),
         name: document.getElementById('visor-name').value,
@@ -756,6 +812,7 @@
 
       alert(`¡Bienvenido a Talentz, ${visorData.name}! Tu cuenta de ${visorData.role} ha sido registrada.`);
       document.getElementById('form-visor').reset();
+      resetTermsValidation('visor');
       showView('visor');
     }
 
