@@ -29,12 +29,33 @@
       backdrop-filter: blur(14px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
+    
+    /* Animación Fade-In-Up */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
   </style>
 </head>
 <body class="bg-navy-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-sport-500 selection:text-white">
 
-  <!-- NAVBAR -->
-  <header class="border-b border-slate-800/80 bg-navy-950/90 backdrop-blur-md sticky top-0 z-50">
+  <!-- NAVBAR STICKY GLASSMOCK -->
+  <header class="bg-[#0B132B]/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
       <!-- Logo -->
       <div onclick="showView('hero')" class="cursor-pointer flex items-center gap-3 group">
@@ -52,8 +73,7 @@
       <!-- Nav Links -->
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
         <button onclick="showView('hero')" class="text-slate-300 hover:text-sport-400 transition">Inicio</button>
-        <button onclick="showView('visor')" class="text-slate-300 hover:text-cobalt-400 transition flex items-center gap-2">
-          <!-- Binoculares Frontales SVG -->
+        <button onclick="showView('visor')" class="text-slate-300 hover:text-cobalt-400 transition flex items-center gap-2 group">
           <svg class="w-4 h-4 text-cobalt-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="7" cy="15" r="3.5"></circle>
             <circle cx="17" cy="15" r="3.5"></circle>
@@ -65,7 +85,7 @@
           Buscar Atletas
         </button>
         <!-- Botón Registrarse Optimizado -->
-        <button onclick="showRegistrationTab('atleta')" class="bg-[#FF6B00] hover:bg-[#E56000] text-white font-bold px-5 py-2.5 rounded-xl transition shadow-lg shadow-sport-500/20 hover:scale-105 active:scale-95 flex items-center gap-2">
+        <button onclick="showRegistrationTab('atleta')" class="bg-[#FF6B00] hover:bg-[#E56000] text-white font-bold px-5 py-2.5 rounded-xl transition shadow-lg shadow-sport-500/20 hover:scale-105 active:scale-95 flex items-center gap-2 group">
           <i data-lucide="user-plus" class="w-4 h-4"></i> Registrarse
         </button>
       </nav>
@@ -92,27 +112,28 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-sport-500/30 mb-8 text-xs font-bold tracking-wide text-sport-400">
+      <!-- Badge con Fade-in -->
+      <div class="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-sport-500/30 mb-8 text-xs font-bold tracking-wide text-sport-400">
         <span class="w-2 h-2 rounded-full bg-sport-500 animate-pulse"></span>
         PLATAFORMA LÍDER DE VISORÍAS DIGITALES EN LATAM
       </div>
 
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
+      <!-- Titular con Fade-in delay-100 -->
+      <h1 class="animate-fade-in-up delay-100 text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
         Tu vitrina al <span class="text-sport-500">deporte</span> <span class="text-cobalt-400">profesional</span>.
       </h1>
 
-      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-12 font-normal leading-relaxed">
+      <p class="animate-fade-in-up delay-100 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-12 font-normal leading-relaxed">
         Conecta directamente con cazatalentos, clubes profesionales y becas universitarias.
         <span class="block mt-3 text-slate-400">Sube tus métricas clave, historial competitivo y videos de pruebas.</span>
       </p>
 
-      <!-- Action Cards con Hover Glow + Elevación -->
+      <!-- Action Cards (Clickeables en toda la zona + hover glow + flecha deslizante) -->
       <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16 text-left">
         
         <!-- Tarjeta Atleta -->
-        <div onclick="showRegistrationTab('atleta')" class="glass-card p-8 rounded-3xl cursor-pointer group transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6B00] hover:shadow-[0_0_20px_rgba(255,107,0,0.25)]">
-          <div class="w-14 h-14 rounded-2xl bg-sport-500/10 border border-sport-500/20 text-sport-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <div onclick="showRegistrationTab('atleta')" class="animate-fade-in-up delay-200 glass-card p-8 rounded-3xl cursor-pointer group transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6B00] hover:shadow-[0_0_20px_rgba(255,107,0,0.25)]">
+          <div class="w-14 h-14 rounded-2xl bg-sport-500/10 border border-sport-500/20 text-sport-500 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-sport-500 group-hover:text-white transition-all">
             <i data-lucide="trophy" class="w-7 h-7"></i>
           </div>
           <span class="text-xs font-bold text-sport-500 uppercase tracking-wider">Para Deportistas +18</span>
@@ -120,15 +141,16 @@
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
             Muestra tu potencial. Publica tus estadísticas físicas, posición en cancha y tus mejores jugadas en video.
           </p>
-          <div class="flex items-center gap-2 font-bold text-sport-500 text-sm group-hover:translate-x-2 transition-transform">
-            Registrar mi perfil <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <div class="flex items-center gap-2 font-bold text-sport-500 text-sm group-hover:text-sport-400 transition-colors">
+            Registrar mi perfil 
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"></i>
           </div>
         </div>
 
         <!-- Tarjeta Visor / Coach -->
-        <div onclick="showRegistrationTab('visor')" class="glass-card p-8 rounded-3xl cursor-pointer group transition-all duration-300 hover:-translate-y-1 hover:border-[#2563EB] hover:shadow-[0_0_20px_rgba(37,99,235,0.25)]">
-          <div class="w-14 h-14 rounded-2xl bg-cobalt-500/10 border border-cobalt-500/20 text-cobalt-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-cobalt-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <div onclick="showRegistrationTab('visor')" class="animate-fade-in-up delay-300 glass-card p-8 rounded-3xl cursor-pointer group transition-all duration-300 hover:-translate-y-1 hover:border-[#2563EB] hover:shadow-[0_0_20px_rgba(37,99,235,0.25)]">
+          <div class="w-14 h-14 rounded-2xl bg-cobalt-500/10 border border-cobalt-500/20 text-cobalt-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cobalt-500 group-hover:text-white transition-all">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="7" cy="15" r="3.5"></circle>
               <circle cx="17" cy="15" r="3.5"></circle>
               <path d="M10.5 15h3"></path>
@@ -142,31 +164,57 @@
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
             Crea tu perfil institucional, valida tu acreditación y accede al directorio de prospectos calificados.
           </p>
-          <div class="flex items-center gap-2 font-bold text-cobalt-400 text-sm group-hover:translate-x-2 transition-transform">
-            Explorar prospectos <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <div class="flex items-center gap-2 font-bold text-cobalt-400 text-sm group-hover:text-cobalt-300 transition-colors">
+            Explorar prospectos 
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"></i>
           </div>
         </div>
 
       </div>
 
-      <!-- Banner Métricas -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80">
-        <div>
-          <p class="text-xl font-black text-sport-500">100% Gratuito</p>
-          <p class="text-xs text-slate-400 uppercase font-semibold mt-1">Para Atletas LATAM</p>
+      <!-- Banner Métricas con Íconos Lineales e Interacción Glowing -->
+      <div class="animate-fade-in-up delay-400 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80">
+        
+        <div class="flex items-center gap-3 p-2 rounded-xl group transition-all">
+          <div class="w-10 h-10 rounded-xl bg-sport-500/10 flex items-center justify-center text-sport-500/60 group-hover:text-sport-500 group-hover:bg-sport-500/20 transition-all shrink-0 border border-sport-500/20">
+            <i data-lucide="gift" class="w-5 h-5"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-lg font-black text-sport-500">100% Gratuito</p>
+            <p class="text-[11px] text-slate-400 uppercase font-semibold">Para Atletas LATAM</p>
+          </div>
         </div>
-        <div>
-          <p class="text-xl font-black text-cobalt-400">Directo & Sin Filtros</p>
-          <p class="text-xs text-slate-400 uppercase font-semibold mt-1">Contacto Visor-Atleta</p>
+
+        <div class="flex items-center gap-3 p-2 rounded-xl group transition-all">
+          <div class="w-10 h-10 rounded-xl bg-cobalt-500/10 flex items-center justify-center text-cobalt-400/60 group-hover:text-cobalt-400 group-hover:bg-cobalt-500/20 transition-all shrink-0 border border-cobalt-500/20">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-lg font-black text-cobalt-400">Directo & Sin Filtros</p>
+            <p class="text-[11px] text-slate-400 uppercase font-semibold">Contacto Visor-Atleta</p>
+          </div>
         </div>
-        <div>
-          <p class="text-xl font-black text-white">Pruebas en Video</p>
-          <p class="text-xs text-slate-400 uppercase font-semibold mt-1">YouTube / TikTok / IG</p>
+
+        <div class="flex items-center gap-3 p-2 rounded-xl group transition-all">
+          <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/60 group-hover:text-white group-hover:bg-white/10 transition-all shrink-0 border border-white/10">
+            <i data-lucide="video" class="w-5 h-5"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-lg font-black text-white">Pruebas en Video</p>
+            <p class="text-[11px] text-slate-400 uppercase font-semibold">YouTube / TikTok / IG</p>
+          </div>
         </div>
-        <div>
-          <p class="text-xl font-black text-crimson-500">Comunidad +18</p>
-          <p class="text-xs text-slate-400 uppercase font-semibold mt-1">Perfil Verificado</p>
+
+        <div class="flex items-center gap-3 p-2 rounded-xl group transition-all">
+          <div class="w-10 h-10 rounded-xl bg-crimson-500/10 flex items-center justify-center text-crimson-500/60 group-hover:text-crimson-500 group-hover:bg-crimson-500/20 transition-all shrink-0 border border-crimson-500/20">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-lg font-black text-crimson-500">Comunidad +18</p>
+            <p class="text-[11px] text-slate-400 uppercase font-semibold">Perfil Verificado</p>
+          </div>
         </div>
+
       </div>
 
     </div>
@@ -637,7 +685,7 @@
             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed mb-6">${a.bio}</p>
           </div>
 
-          <button onclick="openAthleteModal(${a.id})" class="w-full bg-navy-900 hover:bg-[#FF6B00] hover:text-white text-slate-300 py-3 rounded-xl font-bold text-xs border border-slate-800 transition flex items-center justify-center gap-2">
+          <button onclick="openAthleteModal(${a.id})" class="w-full bg-navy-900 hover:bg-[#FF6B00] hover:text-white text-slate-300 py-3 rounded-xl font-bold text-xs border border-slate-800 transition flex items-center justify-center gap-2 group">
             <i data-lucide="play-circle" class="w-4 h-4"></i> Ver Trial & Contactar
           </button>
         </div>
